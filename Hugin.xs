@@ -24,9 +24,9 @@ typedef h_table_t Hugin_Table;
 void error_handler (h_location_t line_no, h_string_t message, void *data)
 {
     if (strncmp(message, "warning:", 8) == 0)
-        warn("Error at line %d: %s\n", line_no, message);
+        warn("Error at line %lu: %s\n", line_no, message);
     else
-        croak("Error at line %d: %s\n", line_no, message);
+        croak("Error at line %lu: %s\n", line_no, message);
 }
 
 void print_error (void)

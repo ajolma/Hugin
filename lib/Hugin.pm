@@ -852,7 +852,7 @@ sub row {
 	    if ($a =~ /^{/) {
 		$a =~ s/^{//;
 		$a =~ s/}$//;
-		my @b = split /},{/, $a;
+		my @b = split /\},\{/, $a;
 		for my $x (@b) {
 		    my @x = split /,/, $x;
 		    for (@x) {
