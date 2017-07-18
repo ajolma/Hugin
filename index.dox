@@ -1,0 +1,10 @@
+/*! \mainpage Perl interface to Hugin 
+
+\section index_intro Introduction
+
+This is documentation of the Perl interface to the HUGIN system, a
+Bayesian networks software from <a href="http://www.hugin.com/">Hugin
+Expert A/S</a>. The Perl interface is developed independently by Ari
+Jolma.
+
+*/

@@ -1,0 +1,329 @@
+class Fucus1_wfd
+{
+    inputs = (Secchi_1 Salinity_surface_1);
+    outputs = (CF_Fucus_sh CF_Fucus_exp);
+    node_size = (80 40);
+    HR_Instantiated_in = "\"Area1_wfd\"";
+    HR_Desc = "";
+    HR_OOBN_CheckConsistency = "1";
+    HR_OOBN_FitExpand = "1";
+    HR_Zoom_ZoomFactor = "100";
+    HR_Groups_GroupColors = "";
+    HR_Groups_GroupNames = "";
+    HR_Groups_UserGroupsNo = "0";
+    HR_Color_Interface = "21";
+    HR_Color_Instance = "0";
+    HR_Color_Utility = "36";
+    HR_Color_Decision = "17";
+    HR_Color_ContinuousChance = "48";
+    HR_Color_DiscreteChance = "16";
+    HR_Monitor_InitSD = "2";
+    HR_Monitor_InitStates = "5";
+    HR_Monitor_OpenGraph = "0";
+    HR_Monitor_GraphPrecision = "100";
+    HR_Monitor_AutoUpdGraph = "0";
+    HR_Compile_MaxMinimalSeparators = "100000";
+    HR_Compile_ApproxEpsilon = "1.0E-5";
+    HR_Compile_Approximate = "0";
+    HR_Compile_Compress = "0";
+    HR_Compile_TriangMethod = "0";
+    HR_Propagate_AutoNormal = "1";
+    HR_Propagate_AutoSum = "1";
+    HR_Propagate_Auto = "1";
+    HR_Font_Italic = "0";
+    HR_Font_Weight = "400";
+    HR_Font_Size = "-12";
+    HR_Font_Name = "Arial";
+    HR_Grid_GridShow = "0";
+    HR_Grid_GridSnap = "0";
+    HR_Grid_Y = "40";
+    HR_Grid_X = "40";
+
+    node Salinity_surface_1
+    {
+	label = "";
+	position = (347 140);
+	states = ("" "" "" "");
+	subtype = interval;
+	state_values = (0 3 5 7 infinity);
+	HR_LinkMode_Fucus_max_depth_exp_1 = "0";
+	HR_LinkMode_Fucus_max_depth_shelt_1 = "0";
+	HR_State_0 = "";
+	HR_State_1 = "";
+	HR_Desc = "Salinity (psu) of the surface water layer within area 1. Classes after Remane & Schlieper (1971) in Wetzel (2001): Limnology - Lake and river ecosystems. \nBased on annual averages in 0-5 m water layer of 10-15 sites (minimum depth 15 m) within the area during period 1998-2007. Data is originating from HERTTA database of Finnish Environment Institute.\n";
+	HR_NodeSize = "(140, 31)";
+	HR_State_2 = "";
+	HR_State_3 = "";
+	HR_State_4 = "";
+	HR_Group = "0";
+    }
+
+    node Fucus_wfd_exp_1
+    {
+	label = "";
+	position = (599 410);
+	states = ("High" "Good" "Moderate" "Poor" "Bad");
+	HR_LinkMode_CF_Fucus_exp = "0";
+	HR_State_0 = "if > 4 = High";
+	HR_State_1 = "if 2.5 - 4 = Good";
+	HR_State_2 = "if 1 - 2.5 = Moderate";
+	HR_State_3 = "if 0.7 - 1 = Poor";
+	HR_State_4 = "if 0 - 0.7 = Bad";
+	HR_Desc = "WFD classification of area 1 in accordance with state of the Fucus maximum growth depth.\n";
+	HR_NodeSize = "(160, 47)";
+	HR_LinkMode_Utility_WFD = "0";
+	HR_Group = "0";
+    }
+
+    node Fucus_wfd_sh_1
+    {
+	label = "";
+	position = (353 407);
+	states = ("High" "Good" "Moderate" "Poor" "Bad");
+	HR_LinkMode_CF_Fucus_sh = "0";
+	HR_State_0 = "if > 2.5 = High";
+	HR_State_1 = "if 1.5 - 2.5 = Good";
+	HR_State_2 = "if 0.7 - 1.5 = Moderate";
+	HR_State_3 = "if 0.5 - 0.7 = Poor";
+	HR_State_4 = "if 0 - 0.5 = Bad";
+	HR_Desc = "WFD classification of area 1 in accordance with state of the Fucus maximum growth depth.\n";
+	HR_NodeSize = "(160, 47)";
+	HR_LinkMode_Utility_WFD = "0";
+	HR_Group = "0";
+    }
+
+    node CF_Fucus_exp
+    {
+	label = "";
+	position = (606 514);
+	states = ("" "" "" "" "");
+	subtype = number;
+	state_values = (0.1 0.3 0.5 0.8 1);
+	HR_LinkMode_General_Fucus_class_1 = "0";
+	HR_LinkMode_Fucus_wfd_class_1 = "0";
+	HR_NodeSize = "(119, 48)";
+	HR_Desc = "Gives a common factor for a WFD class\nHigh=1\nGood=0,8\nModerate=0,5\nPoor= 0,3\nBad=0,1";
+	HR_State_0 = "Bad";
+	HR_State_1 = "Poor";
+	HR_State_2 = "Moderate";
+	HR_State_3 = "Good";
+	HR_State_4 = "High";
+	HR_LinkMode_Commensurability = "0";
+	HR_LinkMode_General_wfd_class_1 = "0";
+	HR_Group = "0";
+    }
+
+    node CF_Fucus_sh
+    {
+	label = "";
+	position = (358 518);
+	states = ("" "" "" "" "");
+	subtype = number;
+	state_values = (0.1 0.3 0.5 0.8 1);
+	HR_LinkMode_General_Fucus_class_1 = "0";
+	HR_LinkMode_Fucus_wfd_class_1 = "0";
+	HR_NodeSize = "(125, 49)";
+	HR_Desc = "Gives a common factor for a WFD class\nHigh=1\nGood=0,8\nModerate=0,5\nPoor= 0,3\nBad=0,1";
+	HR_State_0 = "Bad";
+	HR_State_1 = "Poor";
+	HR_State_2 = "Moderate";
+	HR_State_3 = "Good";
+	HR_State_4 = "High";
+	HR_LinkMode_Commensurability = "0";
+	HR_LinkMode_General_wfd_class_1 = "0";
+	HR_Group = "0";
+    }
+
+    node Secchi_1
+    {
+	label = "";
+	position = (652 146);
+	states = ("" "" "" "" "");
+	subtype = interval;
+	state_values = (0 0.5 1.1 3 4.5 infinity);
+	HR_LinkMode_Fucus_max_depth_shelt_1 = "0";
+	HR_LinkMode_Fucus_max_depth_exp_1 = "0";
+	HR_State_0 = "";
+	HR_State_1 = "";
+	HR_Desc = "Secchi depth (m) within area 1\nClasses after preliminary finnish WFD class boundaries";
+	HR_NodeSize = "(85, 32)";
+	HR_State_2 = "";
+	HR_State_3 = "";
+	HR_State_4 = "Classes after preliminary finnish WFD class boundaries";
+	HR_Group = "0";
+    }
+
+    node Fucus_max_depth_shelt_1
+    {
+	label = "";
+	position = (357 311);
+	states = ("" "" "" "" "");
+	subtype = interval;
+	state_values = (0 0.5 0.7 1.5 2.5 infinity);
+	HR_LinkMode_Fucus_wfd_sh_1 = "0";
+	HR_State_4 = "";
+	HR_State_3 = "";
+	HR_State_2 = "";
+	HR_State_1 = "";
+	HR_State_0 = "";
+	HR_Desc = "Maximum growth depth of Fucus on sheltered shores within area 1. Classes after preliminary Finnish WFD classification system. Data is from the monitoring programs of Finnish Radiation and Nuclear Safety Authority and Finnish Environment Institute and is collected between 1977-2005.";
+	HR_Group = "0";
+	HR_NodeSize = "(186, 49)";
+	HR_LinkMode_Fucus_viability = "0";
+    }
+
+    node Fucus_max_depth_exp_1
+    {
+	label = "";
+	position = (600 313);
+	states = ("" "" "" "" "");
+	subtype = interval;
+	state_values = (0 0.7 1 2.5 4 infinity);
+	HR_LinkMode_Fucus_wfd_exp_1 = "0";
+	HR_State_4 = "";
+	HR_State_3 = "";
+	HR_State_2 = "";
+	HR_LinkMode_Fucus_viability = "0";
+	HR_NodeSize = "(170, 48)";
+	HR_Group = "0";
+	HR_Desc = "Maximum growth depth of Fucus on exposed shores within area 1. Classes after preliminary Finnish WFD classification system. Data is from the monitoring programs of Finnish Radiation and Nuclear Safety Authority and Finnish Environment Institute and is collected between 1977-2005.";
+	HR_State_1 = "";
+	HR_State_0 = "";
+    }
+
+    potential (Salinity_surface_1)
+    {
+	data = ( 0.0671054 0.0427195 0.888099 0.00207621 );
+    }
+
+    potential (Fucus_wfd_exp_1 | Fucus_max_depth_exp_1)
+    {
+	data = (( 0.369807 0.222653 0.0836711 0.0571773 0.266691 )	%  Fucus_max_depth_exp_1=interval(0,0.7)
+		( 0.280192 0.26489 0.279922 0.0412598 0.133736 )	%  Fucus_max_depth_exp_1=interval(0.7,1)
+		( 0.094357 0.178784 0.286838 0.244127 0.195894 )	%  Fucus_max_depth_exp_1=interval(1,2.5)
+		( 0.16327 0.297345 0.166488 0.0877282 0.285169 )	%  Fucus_max_depth_exp_1=interval(2.5,4)
+		( 0.298757 0.153447 0.292396 0.177125 0.0782756 ));	%  Fucus_max_depth_exp_1=interval(4,infinity)
+    }
+
+    potential (Fucus_wfd_sh_1 | Fucus_max_depth_shelt_1)
+    {
+	data = (( 0.0453443 0.230341 0.23956 0.230516 0.254238 )	%  Fucus_max_depth_shelt_1=interval(0,0.5)
+		( 0.0986751 0.338541 0.0799994 0.116136 0.366648 )	%  Fucus_max_depth_shelt_1=interval(0.5,0.7)
+		( 0.102268 0.42986 0.0865955 0.345222 0.036054 )	%  Fucus_max_depth_shelt_1=interval(0.7,1.5)
+		( 0.290685 0.0845711 0.457238 0.0376357 0.12987 )	%  Fucus_max_depth_shelt_1=interval(1.5,2.5)
+		( 0.29641 0.121118 0.240038 0.0978597 0.244574 ));	%  Fucus_max_depth_shelt_1=interval(2.5,infinity)
+    }
+
+    potential (CF_Fucus_exp | Fucus_wfd_exp_1)
+    {
+	data = (( 0 0 0 0 1 )	%  Fucus_wfd_exp_1=High
+		( 0 0 0 1 0 )	%  Fucus_wfd_exp_1=Good
+		( 0 0 1 0 0 )	%  Fucus_wfd_exp_1=Moderate
+		( 0 1 0 0 0 )	%  Fucus_wfd_exp_1=Poor
+		( 1 0 0 0 0 ));	%  Fucus_wfd_exp_1=Bad
+    }
+
+    potential (CF_Fucus_sh | Fucus_wfd_sh_1)
+    {
+	data = (( 0 0 0 0 1 )	%  Fucus_wfd_sh_1=High
+		( 0 0 0 1 0 )	%  Fucus_wfd_sh_1=Good
+		( 0 0 1 0 0 )	%  Fucus_wfd_sh_1=Moderate
+		( 0 1 0 0 0 )	%  Fucus_wfd_sh_1=Poor
+		( 1 0 0 0 0 ));	%  Fucus_wfd_sh_1=Bad
+    }
+
+    potential (Secchi_1)
+    {
+	data = ( 1 1 1 1 1 );
+    }
+
+    potential (Fucus_max_depth_shelt_1 | Salinity_surface_1 Secchi_1)
+    {
+	data = ((( 0.2 0.2 0.2 0.2 0.2 )	%  Salinity_surface_1=interval(0,3)  Secchi_1=interval(0,0.5)
+		 ( 0.2 0.2 0.2 0.2 0.2 )	%  Salinity_surface_1=interval(0,3)  Secchi_1=interval(0.5,1.1)
+		 ( 0.2 0.2 0.2 0.2 0.2 )	%  Salinity_surface_1=interval(0,3)  Secchi_1=interval(1.1,3)
+		 ( 0.2 0.2 0.2 0.2 0.2 )	%  Salinity_surface_1=interval(0,3)  Secchi_1=interval(3,4.5)
+		 ( 0.2 0.2 0.2 0.2 0.2 ))	%  Salinity_surface_1=interval(0,3)  Secchi_1=interval(4.5,infinity)
+		(( 0.2 0.2 0.2 0.2 0.2 )	%  Salinity_surface_1=interval(3,5)  Secchi_1=interval(0,0.5)
+		 ( 0.0333333 0.0333333 0.2 0.7 0.0333333 )	%  Salinity_surface_1=interval(3,5)  Secchi_1=interval(0.5,1.1)
+		 ( 0.548571 0.0342857 0.00571429 0.0914286 0.32 )	%  Salinity_surface_1=interval(3,5)  Secchi_1=interval(1.1,3)
+		 ( 0.258333 0.00833333 0.00833333 0.0916667 0.633333 )	%  Salinity_surface_1=interval(3,5)  Secchi_1=interval(3,4.5)
+		 ( 0.2 0.2 0.2 0.2 0.2 ))	%  Salinity_surface_1=interval(3,5)  Secchi_1=interval(4.5,infinity)
+		(( 0.2 0.2 0.2 0.2 0.2 )	%  Salinity_surface_1=interval(5,7)  Secchi_1=interval(0,0.5)
+		 ( 0.1 0.1 0.1 0.6 0.1 )	%  Salinity_surface_1=interval(5,7)  Secchi_1=interval(0.5,1.1)
+		 ( 0.025 0.00416667 0.15 0.7125 0.108333 )	%  Salinity_surface_1=interval(5,7)  Secchi_1=interval(1.1,3)
+		 ( 0.0111111 0.0111111 0.0666667 0.344444 0.566667 )	%  Salinity_surface_1=interval(5,7)  Secchi_1=interval(3,4.5)
+		 ( 0.1 0.1 0.1 0.1 0.6 ))	%  Salinity_surface_1=interval(5,7)  Secchi_1=interval(4.5,infinity)
+		(( 0.2 0.2 0.2 0.2 0.2 )	%  Salinity_surface_1=interval(7,infinity)  Secchi_1=interval(0,0.5)
+		 ( 0.2 0.2 0.2 0.2 0.2 )	%  Salinity_surface_1=interval(7,infinity)  Secchi_1=interval(0.5,1.1)
+		 ( 0.2 0.2 0.2 0.2 0.2 )	%  Salinity_surface_1=interval(7,infinity)  Secchi_1=interval(1.1,3)
+		 ( 0.2 0.2 0.2 0.2 0.2 )	%  Salinity_surface_1=interval(7,infinity)  Secchi_1=interval(3,4.5)
+		 ( 0.2 0.2 0.2 0.2 0.2 )));	%  Salinity_surface_1=interval(7,infinity)  Secchi_1=interval(4.5,infinity)
+	experience
+	     = (( 1	%  Salinity_surface_1=interval(0,3)  Secchi_1=interval(0,0.5)
+		  1	%  Salinity_surface_1=interval(0,3)  Secchi_1=interval(0.5,1.1)
+		  1	%  Salinity_surface_1=interval(0,3)  Secchi_1=interval(1.1,3)
+		  1	%  Salinity_surface_1=interval(0,3)  Secchi_1=interval(3,4.5)
+		  1 )	%  Salinity_surface_1=interval(0,3)  Secchi_1=interval(4.5,infinity)
+		( 1	%  Salinity_surface_1=interval(3,5)  Secchi_1=interval(0,0.5)
+		  6	%  Salinity_surface_1=interval(3,5)  Secchi_1=interval(0.5,1.1)
+		  35	%  Salinity_surface_1=interval(3,5)  Secchi_1=interval(1.1,3)
+		  24	%  Salinity_surface_1=interval(3,5)  Secchi_1=interval(3,4.5)
+		  1 )	%  Salinity_surface_1=interval(3,5)  Secchi_1=interval(4.5,infinity)
+		( 1	%  Salinity_surface_1=interval(5,7)  Secchi_1=interval(0,0.5)
+		  2	%  Salinity_surface_1=interval(5,7)  Secchi_1=interval(0.5,1.1)
+		  51	%  Salinity_surface_1=interval(5,7)  Secchi_1=interval(1.1,3)
+		  28	%  Salinity_surface_1=interval(5,7)  Secchi_1=interval(3,4.5)
+		  3 )	%  Salinity_surface_1=interval(5,7)  Secchi_1=interval(4.5,infinity)
+		( 1	%  Salinity_surface_1=interval(7,infinity)  Secchi_1=interval(0,0.5)
+		  1	%  Salinity_surface_1=interval(7,infinity)  Secchi_1=interval(0.5,1.1)
+		  1	%  Salinity_surface_1=interval(7,infinity)  Secchi_1=interval(1.1,3)
+		  1	%  Salinity_surface_1=interval(7,infinity)  Secchi_1=interval(3,4.5)
+		  1 ));	%  Salinity_surface_1=interval(7,infinity)  Secchi_1=interval(4.5,infinity)
+    }
+
+    potential (Fucus_max_depth_exp_1 | Salinity_surface_1 Secchi_1)
+    {
+	data = ((( 0.2 0.2 0.2 0.2 0.2 )	%  Salinity_surface_1=interval(0,3)  Secchi_1=interval(0,0.5)
+		 ( 0.2 0.2 0.2 0.2 0.2 )	%  Salinity_surface_1=interval(0,3)  Secchi_1=interval(0.5,1.1)
+		 ( 0.2 0.2 0.2 0.2 0.2 )	%  Salinity_surface_1=interval(0,3)  Secchi_1=interval(1.1,3)
+		 ( 0.2 0.2 0.2 0.2 0.2 )	%  Salinity_surface_1=interval(0,3)  Secchi_1=interval(3,4.5)
+		 ( 0.2 0.2 0.2 0.2 0.2 ))	%  Salinity_surface_1=interval(0,3)  Secchi_1=interval(4.5,infinity)
+		(( 0.2 0.2 0.2 0.2 0.2 )	%  Salinity_surface_1=interval(3,5)  Secchi_1=interval(0,0.5)
+		 ( 0.2 0.2 0.2 0.2 0.2 )	%  Salinity_surface_1=interval(3,5)  Secchi_1=interval(0.5,1.1)
+		 ( 0.2 0.2 0.2 0.2 0.2 )	%  Salinity_surface_1=interval(3,5)  Secchi_1=interval(1.1,3)
+		 ( 0.2 0.2 0.2 0.2 0.2 )	%  Salinity_surface_1=interval(3,5)  Secchi_1=interval(3,4.5)
+		 ( 0.2 0.2 0.2 0.2 0.2 ))	%  Salinity_surface_1=interval(3,5)  Secchi_1=interval(4.5,infinity)
+		(( 0.2 0.2 0.2 0.2 0.2 )	%  Salinity_surface_1=interval(5,7)  Secchi_1=interval(0,0.5)
+		 ( 0.2 0.2 0.2 0.2 0.2 )	%  Salinity_surface_1=interval(5,7)  Secchi_1=interval(0.5,1.1)
+		 ( 0.071123 0.071123 0.715508 0.071123 0.071123 )	%  Salinity_surface_1=interval(5,7)  Secchi_1=interval(1.1,3)
+		 ( 0.018183 0.018183 0.83636 0.018183 0.109091 )	%  Salinity_surface_1=interval(5,7)  Secchi_1=interval(3,4.5)
+		 ( 0.1 0.1 0.6 0.1 0.1 ))	%  Salinity_surface_1=interval(5,7)  Secchi_1=interval(4.5,infinity)
+		(( 0.2 0.2 0.2 0.2 0.2 )	%  Salinity_surface_1=interval(7,infinity)  Secchi_1=interval(0,0.5)
+		 ( 0.2 0.2 0.2 0.2 0.2 )	%  Salinity_surface_1=interval(7,infinity)  Secchi_1=interval(0.5,1.1)
+		 ( 0.2 0.2 0.2 0.2 0.2 )	%  Salinity_surface_1=interval(7,infinity)  Secchi_1=interval(1.1,3)
+		 ( 0.2 0.2 0.2 0.2 0.2 )	%  Salinity_surface_1=interval(7,infinity)  Secchi_1=interval(3,4.5)
+		 ( 0.2 0.2 0.2 0.2 0.2 )));	%  Salinity_surface_1=interval(7,infinity)  Secchi_1=interval(4.5,infinity)
+	experience
+	     = (( 1	%  Salinity_surface_1=interval(0,3)  Secchi_1=interval(0,0.5)
+		  1	%  Salinity_surface_1=interval(0,3)  Secchi_1=interval(0.5,1.1)
+		  1	%  Salinity_surface_1=interval(0,3)  Secchi_1=interval(1.1,3)
+		  1	%  Salinity_surface_1=interval(0,3)  Secchi_1=interval(3,4.5)
+		  1 )	%  Salinity_surface_1=interval(0,3)  Secchi_1=interval(4.5,infinity)
+		( 1	%  Salinity_surface_1=interval(3,5)  Secchi_1=interval(0,0.5)
+		  6	%  Salinity_surface_1=interval(3,5)  Secchi_1=interval(0.5,1.1)
+		  35	%  Salinity_surface_1=interval(3,5)  Secchi_1=interval(1.1,3)
+		  24	%  Salinity_surface_1=interval(3,5)  Secchi_1=interval(3,4.5)
+		  1 )	%  Salinity_surface_1=interval(3,5)  Secchi_1=interval(4.5,infinity)
+		( 1	%  Salinity_surface_1=interval(5,7)  Secchi_1=interval(0,0.5)
+		  2	%  Salinity_surface_1=interval(5,7)  Secchi_1=interval(0.5,1.1)
+		  51	%  Salinity_surface_1=interval(5,7)  Secchi_1=interval(1.1,3)
+		  28	%  Salinity_surface_1=interval(5,7)  Secchi_1=interval(3,4.5)
+		  3 )	%  Salinity_surface_1=interval(5,7)  Secchi_1=interval(4.5,infinity)
+		( 1	%  Salinity_surface_1=interval(7,infinity)  Secchi_1=interval(0,0.5)
+		  1	%  Salinity_surface_1=interval(7,infinity)  Secchi_1=interval(0.5,1.1)
+		  1	%  Salinity_surface_1=interval(7,infinity)  Secchi_1=interval(1.1,3)
+		  1	%  Salinity_surface_1=interval(7,infinity)  Secchi_1=interval(3,4.5)
+		  1 ));	%  Salinity_surface_1=interval(7,infinity)  Secchi_1=interval(4.5,infinity)
+    }
+} % class Fucus1_wfd

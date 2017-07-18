@@ -1,0 +1,1496 @@
+class Area1_wfd
+{
+    inputs = ();
+    outputs = ();
+    node_size = (80 40);
+    HR_Instantiated_in = "";
+    HR_OOBN_CheckConsistency = "1";
+    HR_Desc = "";
+    HR_OOBN_FitExpand = "1";
+    HR_Zoom_ZoomFactor = "100";
+    HR_Groups_GroupColors = "";
+    HR_Groups_GroupNames = "";
+    HR_Groups_UserGroupsNo = "0";
+    HR_Color_Interface = "21";
+    HR_Color_Instance = "0";
+    HR_Color_Utility = "36";
+    HR_Color_Decision = "17";
+    HR_Color_ContinuousChance = "48";
+    HR_Color_DiscreteChance = "16";
+    HR_Monitor_InitSD = "2";
+    HR_Monitor_InitStates = "5";
+    HR_Monitor_OpenGraph = "0";
+    HR_Monitor_GraphPrecision = "100";
+    HR_Monitor_AutoUpdGraph = "0";
+    HR_Compile_MaxMinimalSeparators = "100000";
+    HR_Compile_ApproxEpsilon = "1.0E-5";
+    HR_Compile_Approximate = "0";
+    HR_Compile_Compress = "0";
+    HR_Compile_TriangMethod = "0";
+    HR_Propagate_AutoNormal = "1";
+    HR_Propagate_AutoSum = "1";
+    HR_Propagate_Auto = "1";
+    HR_Font_Italic = "0";
+    HR_Font_Weight = "400";
+    HR_Font_Size = "-12";
+    HR_Font_Name = "Arial";
+    HR_Grid_GridShow = "0";
+    HR_Grid_GridSnap = "0";
+    HR_Grid_Y = "40";
+    HR_Grid_X = "40";
+
+    node Utility_WFD
+    {
+	label = "";
+	position = (612 792);
+	states = ("" "" "" "" "");
+	subtype = number;
+	state_values = (10 30 50 80 100);
+	HR_State_4 = "Status of the area is \"High\"";
+	HR_State_3 = "Status of the area is \"Good\"";
+	HR_State_2 = "Status of the area is \"Moderate\"";
+	HR_Group = "0";
+	HR_Desc = "Gives a total benefit value for the area according to its general status in Finnish preliminary WFD classification system. Valuation after finnish WFD classification guidelines. ";
+	HR_State_1 = "Status of the area is \"Poor\"";
+	HR_State_0 = "Status of the area is \"Bad\"";
+    }
+
+    node Ptot_1
+    {
+	label = "";
+	position = (314 254);
+	states = ("" "" "" "" "");
+	subtype = interval;
+	state_values = (0 26 33 65 87 infinity);
+	HR_State_0 = "";
+	HR_State_1 = "";
+	HR_Desc = "Phosphorus concentration (\302\265g/l) in the surface water layer within area 1 (average for period January-March). Forecasts for different scenarios are modelled with EIA-SYKE ecosystem model.  At this moment probability distribution consists of the spatial variability among 5x5 km grids of the model within the area. \n\nIn WFD classification of finnish inner archipelago areas, Ptot is not included because of the great amount of internal loading. In here we still need to use Ptot for modeling the state of different species, thus it can not be left out totally. These class boundaries here are calculated by using Ntot class boundaries for inner archipelago and the same Ntot/Ptot -relation than in outer archipelago WFD class boundaries.";
+	HR_NodeSize = "(92, 28)";
+	HR_State_2 = "";
+	HR_State_3 = "";
+	HR_State_4 = "In WFD classification of finnish inner archipelago areas, Ptot is not included because of the great amount of internal loading. In here we still need to use Ptot for modeling tha state of different species, thus it can not be left out totally. These class boundaries here are calculated by using Ntot class boundaries for inner archipelago and the same Ntot/Ptot -relation than in outer archipelago WFD class boundaries.";
+	HR_Group = "0";
+    }
+
+    node Ntot_1
+    {
+	label = "";
+	position = (447 255);
+	states = ("" "" "" "" "");
+	subtype = interval;
+	state_values = (0 468 585 1170 1560 infinity);
+	HR_State_0 = "";
+	HR_State_1 = "";
+	HR_Desc = "Nitrogen concentration (\302\265g/l) in the surface water layer within area 1 (average for period January-March). Classes after preliminary finnish WFD class boundaries. Forecasts for different scenarios are modelled with EIA-SYKE ecosystem model.  At this moment probability distribution consists of the spatial variability among 5x5 km grids of the model within the area. ";
+	HR_NodeSize = "(98, 28)";
+	HR_State_2 = "";
+	HR_State_3 = "";
+	HR_State_4 = "";
+	HR_LinkMode_Ntot_wfd_class_1 = "0";
+	HR_Group = "0";
+    }
+
+    node Oxygen_1
+    {
+	label = "";
+	position = (579 253);
+	states = ("false" "true");
+	subtype = boolean;
+	HR_State_1 = "the potential of internal loading (= oxygen deficiency) is high";
+	HR_State_0 = "no potential of internal loading";
+	HR_LinkMode_Oxygen_1 = "0";
+	HR_NodeSize = "(106, 33)";
+	HR_Desc = "true = potential of internal loading (= oxygen deficiency) within area 1 is high\nfalse = no potential of internal loading within area 1\n\nForecasts for different scenarios are modelled with EIA-SYKE ecosystem model.  At this moment probability distribution consists of the spatial variability among 5x5 km grids of the model within the area. ";
+	HR_Group = "0";
+    }
+
+    node Chlorophyll_a_1
+    {
+	label = "";
+	position = (713 254);
+	states = ("" "" "" "" "");
+	subtype = interval;
+	state_values = (0 3.2 4.7 13 26 infinity);
+	HR_State_0 = "";
+	HR_State_1 = "";
+	HR_Desc = "Chlorophyll-a concentration in surface water layer within area 1 (\302\265g/l) (average for period July-1st week of September). Classes after preliminary finnish WFD class boundaries. Forecasts for different scenarios are modelled with EIA-SYKE ecosystem model.  At this moment probability distribution consists of the spatial variability among 5x5 km grids of the model within the area. ";
+	HR_NodeSize = "(121, 32)";
+	HR_LinkMode_Chlorophyll_a_1 = "0";
+	HR_State_2 = "";
+	HR_State_3 = "";
+	HR_State_4 = "";
+	HR_LinkMode_Chlora_wfd_class_1 = "0";
+	HR_Group = "0";
+    }
+
+    node Secchi_1
+    {
+	label = "";
+	position = (862 256);
+	states = ("" "" "" "" "");
+	subtype = interval;
+	state_values = (0 0.5 1.1 3 4.5 infinity);
+	HR_State_0 = "";
+	HR_State_1 = "";
+	HR_Desc = "Secchi depth (m) within area 1 (average for period July-1st week of September). Classes after preliminary finnish WFD class boundaries. Forecasts for different scenarios are modelled with EIA-SYKE ecosystem model.  At this moment probability distribution consists of the spatial variability among 5x5 km grids of the model within the area. ";
+	HR_NodeSize = "(85, 32)";
+	HR_State_2 = "";
+	HR_State_3 = "";
+	HR_State_4 = "";
+	HR_LinkMode_Secchi_wfd_class_1 = "0";
+	HR_LinkMode_Secchi_1 = "0";
+	HR_Group = "0";
+    }
+
+    node Scenario_Ru
+    {
+	label = "";
+	position = (848 65);
+	states = ("Current_facilities" "All_mww_treated" "Current_level");
+	HR_State_2 = "Current level";
+	HR_LinkMode_N_load_Ru = "0";
+	HR_LinkMode_P_load_Ru = "0";
+	HR_NodeSize = "(102, 42)";
+	HR_Desc = "Scenarios for Russia.";
+	HR_State_1 = "All municipal waste waters are treated, remove of 75% of N and 80% of P.\n\n";
+	HR_State_0 = "80 % of the P in municipal waste water is removed in the current water treatment facilities.\n\n\n\n\n";
+	HR_LinkMode_Secchi_1 = "0";
+	HR_LinkMode_Oxygen_1 = "0";
+	HR_LinkMode_Secchi_1_1 = "0";
+	HR_LinkMode_Chlorophyll_a_1 = "0";
+	HR_LinkMode_Ntot_1 = "0";
+	HR_LinkMode_Ptot_1 = "0";
+	HR_Group = "0";
+    }
+
+    node Scenario_Est
+    {
+	label = "";
+	position = (626 61);
+	states = ("Current_level" "Increasing_agricultural_load");
+	HR_State_2 = "Definition?";
+	HR_LinkMode_N_load_Est = "0";
+	HR_LinkMode_P_load_Est = "0";
+	HR_NodeSize = "(102, 49)";
+	HR_Desc = "Scenarios for Estonia";
+	HR_State_1 = "The loading from agriculture (both N and P) increases 10 % due to increased agricultural production. \"Increase of 10%\".\n\n";
+	HR_State_0 = "The nutrient loading from agriculture to the Gulf of Finland stays at the current level. \"Current level\"\n\n";
+	HR_LinkMode_Secchi_1 = "0";
+	HR_LinkMode_Oxygen_1 = "0";
+	HR_LinkMode_Secchi_1_1 = "0";
+	HR_LinkMode_Chlorophyll_a_1 = "0";
+	HR_LinkMode_Ntot_1 = "0";
+	HR_LinkMode_Ptot_1 = "0";
+	HR_Group = "0";
+    }
+
+    node Scenario_Fi
+    {
+	label = "";
+	position = (386 60);
+	states = ("Business_as_usual" "Realistic" "Optimistic" "Current_level");
+	HR_State_3 = "Current level";
+	HR_State_2 = "Total nutrient loading (both N and P) will decrease 40-50%. \"Optimistic scenario\", requires high political commitment\n";
+	HR_LinkMode_N_load_Fi = "0";
+	HR_LinkMode_P_load_Fi = "0";
+	HR_NodeSize = "(111, 44)";
+	HR_Desc = "Scenarios for Finland. Scenarios are chosen based on a report of Finnish Environment Institute: \"Rehev\303\266itt\303\244v\303\244n kuormituksen v\303\244hent\303\244minen. 2006. Taustaselvitys osa I. Vesiensuojelun suuntaviivat vuoteen 2015. Suomen ymp\303\244rist\303\266keskuksen raportteja\".";
+	HR_State_1 = "Total nutrient loading (both N and P) will decrease 30%. \"Realistic scenario\".\n";
+	HR_State_0 = "Total nutrient loading (both N and P) will decrease 15%. \342\200\234Business as usual-scenario\", may be reached with current policy.\n\n\t\n\n\n";
+	HR_LinkMode_Secchi_1 = "0";
+	HR_LinkMode_Oxygen_1 = "0";
+	HR_LinkMode_Secchi_1_1 = "0";
+	HR_LinkMode_Chlorophyll_a_1 = "0";
+	HR_LinkMode_Ntot_1 = "0";
+	HR_LinkMode_Ptot_1 = "0";
+	HR_Group = "0";
+    }
+
+    node Climate_change
+    {
+	label = "";
+	position = (154 56);
+	states = ("false" "true");
+	subtype = boolean;
+	HR_LinkMode_N_load_Ru = "0";
+	HR_LinkMode_P_load_Ru = "0";
+	HR_LinkMode_N_load_Est = "0";
+	HR_LinkMode_P_load_Est = "0";
+	HR_LinkMode_N_load_Fi = "0";
+	HR_LinkMode_P_load_Fi = "0";
+	HR_State_0 = "";
+	HR_State_1 = "";
+	HR_Desc = "Climate change scenario. In the current version of EVAGULF model, climate change scenario affects only on the nutrient loading forecasts. \"Current\" corresponds the situation with current average annual riverine discharges and \"Warming\" forecasts are calculated using values of exceptionally rainy year.\n\nData used in the \"Current\" -scenario: \nFi: Monthly loads riverine discharges, coastal unmonitored loads and direct point sources mean values for the period 2000 to 2006.\nEst: Monthly loads riverine discharges, coastal unmonitored loads and direct point sources mean values for the period 2000 to 2003.\nRu: SEGUE data (Reference: Pitk\303\244nen, H. & Tallberg, P. 2007).\n\nData used in the \"Warming\" -scenario:\nFi: riverine fluxes and coastal unmonitored loads: 2000 data.\nEst: riverine fluxes and coastal unmonitored loads: 2005 data.\nRu: riverine fluxes and coastal unmonitored loads: water flow in 2005 applied to SEGUE data.";
+	HR_NodeSize = "(126, 40)";
+	HR_LinkMode_Ice_cover_1 = "0";
+	HR_LinkMode_Salinity_surface_1 = "0";
+	HR_LinkMode_Temperature_surface_1 = "0";
+	HR_LinkMode_Salinity_bottom_1 = "0";
+	HR_LinkMode_Temperature_bottom_1 = "0";
+	HR_LinkMode_Secchi_1 = "0";
+	HR_LinkMode_Oxygen_1 = "0";
+	HR_LinkMode_Secchi_1_1 = "0";
+	HR_LinkMode_Chlorophyll_a_1 = "0";
+	HR_LinkMode_Ntot_1 = "0";
+	HR_LinkMode_Ptot_1 = "0";
+	HR_Group = "0";
+    }
+
+    node Salinity_bottom_1
+    {
+	label = "";
+	position = (167 371);
+	states = ("" "" "" "");
+	subtype = interval;
+	state_values = (0 3 5 7 infinity);
+	HR_State_0 = "";
+	HR_State_1 = "";
+	HR_Desc = "Salinity (psu) of the near bottom water layer within area 1. Classes after Remane & Schlieper (1971) in Wetzel (2001): Limnology - Lake and river ecosystems. \nBased on annual averages in near bottom water layer (-1 m) of 10-15 sites (minimum depth 15 m) within the area during period 1998-2007. Data is originating from HERTTA -database of Finnish Environmental Administration.";
+	HR_NodeSize = "(140, 31)";
+	HR_State_2 = "";
+	HR_State_3 = "";
+	HR_State_4 = "";
+	HR_Group = "0";
+    }
+
+    node Fucus_wfd_class_1
+    {
+	label = "";
+	position = (898 528);
+	states = ("High" "Good" "Moderate" "Poor" "Bad");
+	subtype = label;
+	HR_LinkMode_CF_Fucus = "0";
+	HR_Desc = "General WFD classification of area 1 according to Fucus maximum growth depth. Takes mean over common factors of both exposed and sheltered shores and gives the WFD class following the rule:\n>0,8 = High\n=<0,8 = Good\n=<0,6 = Moderate\n=<0,4 = Poor\n=<0,2 = Bad";
+	HR_State_4 = "";
+	HR_State_3 = "";
+	HR_State_2 = "";
+	HR_State_1 = "";
+	HR_State_0 = "";
+	HR_NodeSize = "(174, 52)";
+	HR_Group = "0";
+    }
+
+    node General_wfd_class_1
+    {
+	label = "";
+	position = (613 716);
+	states = ("High" "Good" "Moderate" "Poor" "Bad");
+	subtype = label;
+	HR_LinkMode_Utility_WFD = "0";
+	HR_LinkMode_U1 = "0";
+	HR_State_4 = ">0,8 = High\n=<0,8 = Good\n=<0,6 = Moderate\n=<0,4 = Poor\n=<0,2 = Bad";
+	HR_State_3 = "=<0,4 = Poor";
+	HR_State_2 = "=<0,6 = Moderate";
+	HR_State_1 = "=<0,8 = Good";
+	HR_State_0 = ">0,8 = High";
+	HR_NodeSize = "(149, 47)";
+	HR_Group = "0";
+	HR_Desc = "General WFD classification of area 1 according to the state of ecological, physical and chemical variables. Takes mean over common factors of all the variables and gives the general WFD class following the rule:\n>0,8 = High\n=<0,8 = Good\n=<0,6 = Moderate\n=<0,4 = Poor\n=<0,2 = Bad\n \n";
+    }
+
+    node CF_Fucus
+    {
+	label = "";
+	position = (890 604);
+	states = ("" "" "" "" "");
+	subtype = number;
+	state_values = (0.1 0.3 0.5 0.8 1);
+	HR_LinkMode_General_wfd_class_1 = "0";
+	HR_LinkMode_Commensurability = "0";
+	HR_Desc = "Gives a common factor for a WFD class\nHigh=1\nGood=0,8\nModerate=0,5\nPoor= 0,3\nBad=0,1";
+	HR_State_0 = "Bad";
+	HR_State_1 = "Poor";
+	HR_State_2 = "Moderate";
+	HR_State_3 = "Good";
+	HR_State_4 = "High";
+	HR_Group = "0";
+    }
+
+    node CF_Secchi
+    {
+	label = "";
+	position = (692 599);
+	states = ("" "" "" "" "");
+	subtype = number;
+	state_values = (0.1 0.3 0.5 0.8 1);
+	HR_LinkMode_General_wfd_class_1 = "0";
+	HR_LinkMode_Commensurability = "0";
+	HR_Desc = "Gives a common factor for a WFD class\nHigh=1\nGood=0,8\nModerate=0,5\nPoor= 0,3\nBad=0,1";
+	HR_State_0 = "Bad";
+	HR_State_1 = "Poor";
+	HR_State_2 = "Moderate";
+	HR_State_3 = "Good";
+	HR_State_4 = "High";
+	HR_Group = "0";
+    }
+
+    node CF_Chlora
+    {
+	label = "";
+	position = (506 597);
+	states = ("" "" "" "" "");
+	subtype = number;
+	state_values = (0.1 0.3 0.5 0.8 1);
+	HR_LinkMode_General_wfd_class_1 = "0";
+	HR_LinkMode_Commensurability = "0";
+	HR_Desc = "Gives a common factor for a WFD class\nHigh=1\nGood=0,8\nModerate=0,5\nPoor= 0,3\nBad=0,1";
+	HR_State_0 = "Bad";
+	HR_State_1 = "Poor";
+	HR_State_2 = "Moderate";
+	HR_State_3 = "Good";
+	HR_State_4 = "High";
+	HR_Group = "0";
+    }
+
+    node CF_Ntot
+    {
+	label = "";
+	position = (314 596);
+	states = ("" "" "" "" "");
+	subtype = number;
+	state_values = (0.1 0.3 0.5 0.8 1);
+	HR_LinkMode_General_wfd_class_1 = "0";
+	HR_LinkMode_Commensurability = "0";
+	HR_State_4 = "High";
+	HR_State_3 = "Good";
+	HR_State_2 = "Moderate";
+	HR_State_1 = "Poor";
+	HR_State_0 = "Bad";
+	HR_Desc = "Gives a common factor for a WFD class (after finnish classification directions)\nHigh=1\nGood=0,8\nModerate=0,5\nPoor= 0,3\nBad=0,1";
+	HR_Group = "0";
+    }
+
+    node Secchi_wfd_class_1
+    {
+	label = "";
+	position = (696 521);
+	states = ("High" "Good" "Moderate" "Poor" "Bad");
+	HR_LinkMode_CF_Secchi = "0";
+	HR_LinkMode_General_wfd_class_1_1 = "0";
+	HR_State_0 = "if >4,5 m = High";
+	HR_State_1 = "if 3-4,5 m = Good";
+	HR_State_2 = "if 1,1-3 m = Moderate";
+	HR_State_3 = "if 0,5-1,1 = Poor";
+	HR_State_4 = "if < 0,5 m = Bad";
+	HR_Desc = "WFD classification of area 1 in accordance with state of secchi-depth in water.\n";
+	HR_NodeSize = "(160, 47)";
+	HR_LinkMode_Utility_WFD = "0";
+	HR_Group = "0";
+    }
+
+    node Chlora_wfd_class_1
+    {
+	label = "";
+	position = (508 521);
+	states = ("High" "Good" "Moderate" "Poor" "Bad");
+	HR_LinkMode_CF_Chlora = "0";
+	HR_LinkMode_General_wfd_class_1_1 = "0";
+	HR_LinkMode_Utility_WFD = "0";
+	HR_NodeSize = "(160, 47)";
+	HR_Desc = "WFD classification of area 1 in accordance with state of chlorophyll-a concentrations in water.\n";
+	HR_State_4 = "if >26 \302\265g/l = Bad";
+	HR_State_3 = "if 13-26 \302\265g/l = Poor";
+	HR_State_2 = "if 4,7-13 \302\265g/l = Moderate";
+	HR_State_1 = "if 3,2-4,7 \302\265g/l = Good";
+	HR_State_0 = "if < 3,2 \302\265g/l = High";
+	HR_Group = "0";
+    }
+
+    node Ntot_wfd_class_1
+    {
+	label = "";
+	position = (319 520);
+	states = ("High" "Good" "Moderate" "Poor" "Bad");
+	HR_LinkMode_CF_Ntot = "0";
+	HR_LinkMode_General_wfd_class_1_1 = "0";
+	HR_State_0 = "if < 468 \302\265g/l = High";
+	HR_State_1 = "if 468-585 \302\265g/l = Good";
+	HR_State_2 = "if 585-1170 \302\265g/l = Moderate";
+	HR_State_3 = "if 1170-1560 \302\265g/l = Poor";
+	HR_State_4 = "if >1560 \302\265g/l = Bad";
+	HR_Desc = "WFD classification of area 1 in accordance with state of total nitrogen concentrations in water.\n";
+	HR_NodeSize = "(160, 47)";
+	HR_LinkMode_Utility_WFD = "0";
+	HR_Group = "0";
+    }
+
+    instance Fucus1_wfd : Fucus1_wfd (Secchi_1 = Secchi_1, Salinity_surface_1 = Salinity_surface_1; Fucus1_wfd_CF_Fucus_sh = CF_Fucus_sh, Fucus1_wfd_CF_Fucus_exp = CF_Fucus_exp)
+    {
+	label = "";
+	position = (1018 400);
+	HR_Input_Order = "Salinity_surface_1\tSecchi_1\t";
+	HR_InterfaceNode_placement = "horizontal";
+	HR_InterfaceNode_size = "80,40";
+	HR_NodeSize = "(80, 40)";
+	HR_Group = "0";
+	HR_Desc = "";
+	HR_Output_Order = "Fucus1_wfd_1_Fucus_wfd_class_1\t";
+	HR_isCollapsed = "false";
+    }
+
+    node Temperature_surface_1
+    {
+	label = "";
+	position = (173 414);
+	states = ("" "" "" "" "");
+	subtype = interval;
+	state_values = (6 10 14 18 22 26);
+	HR_State_4 = "";
+	HR_State_3 = "";
+	HR_State_2 = "";
+	HR_NodeSize = "(147, 27)";
+	HR_Group = "0";
+	HR_Desc = "Temperature (Celsius degrees) in surface water layer within area 1. Based on july-august averages in 0-5 m water layer of about 20 sites (minimum depth 15 m) within the area during period 1998-2007. Data is originating from HERTTA -database of Finnish Environmental Administration.";
+	HR_State_1 = "";
+	HR_State_0 = "";
+    }
+
+    node Temperature_bottom_1
+    {
+	label = "";
+	position = (175 458);
+	states = ("" "" "" "" "");
+	subtype = interval;
+	state_values = (0 4 8 12 16 20);
+	HR_State_4 = "";
+	HR_State_3 = "";
+	HR_State_2 = "";
+	HR_LinkMode_Temperature_bottom_1 = "0";
+	HR_NodeSize = "(152, 29)";
+	HR_Group = "0";
+	HR_Desc = "Temperature (Celsius degrees) in near bottom water layer within area 1. Based on july-august averages in near bottom (-1 m) water layer of about 20 sites (minimum depth 15 m) within the area during period 1998-2007. Data is originating from HERTTA -database of Finnish Environmental Administration.";
+	HR_State_1 = "";
+	HR_State_0 = "";
+    }
+
+    node Salinity_surface_1
+    {
+	label = "";
+	position = (162 327);
+	states = ("" "" "" "");
+	subtype = interval;
+	state_values = (0 3 5 7 infinity);
+	HR_LinkMode_Salinity_surface_1 = "0";
+	HR_State_4 = "";
+	HR_State_3 = "";
+	HR_State_2 = "";
+	HR_NodeSize = "(140, 31)";
+	HR_Group = "0";
+	HR_Desc = "Salinity (psu) of the surface water layer within area 1. Classes after Remane & Schlieper (1971) in Wetzel (2001): Limnology - Lake and river ecosystems. \nBased on annual averages in 0-5 m water layer of 10-15 sites (minimum depth 15 m) within the area during period 1998-2007. Data is originating from HERTTA -database of Finnish Environmental Administration.\n";
+	HR_State_1 = "";
+	HR_State_0 = "";
+    }
+
+    potential (Utility_WFD | General_wfd_class_1)
+    {
+	data = (( 0 0 0 0 1 )	%  General_wfd_class_1=High
+		( 0 0 0 1 0 )	%  General_wfd_class_1=Good
+		( 0 0 1 0 0 )	%  General_wfd_class_1=Moderate
+		( 0 1 0 0 0 )	%  General_wfd_class_1=Poor
+		( 1 0 0 0 0 ));	%  General_wfd_class_1=Bad
+    }
+
+    potential (Ptot_1 | Scenario_Ru Scenario_Est Scenario_Fi Climate_change)
+    {
+	data = ((((( 0.104762 0.866667 0.00952381 0.00952381 0.00952381 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Business_as_usual  Climate_change=false
+		   ( 0.104762 0.580952 0.295238 0.00952381 0.00952381 ))	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Business_as_usual  Climate_change=true
+		  (( 0.104762 0.866667 0.00952381 0.00952381 0.00952381 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Realistic  Climate_change=false
+		   ( 0.104762 0.72381 0.152381 0.00952381 0.00952381 ))	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Realistic  Climate_change=true
+		  (( 0.104762 0.866667 0.00952381 0.00952381 0.00952381 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Optimistic  Climate_change=false
+		   ( 0.104762 0.819048 0.0571429 0.00952381 0.00952381 ))	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Optimistic  Climate_change=true
+		  (( 0.104762 0.866667 0.00952381 0.00952381 0.00952381 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Current_level  Climate_change=false
+		   ( 0.00952381 0.485714 0.485714 0.00952381 0.00952381 )))	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Current_level  Climate_change=true
+		 ((( 0.104762 0.0571429 0.819048 0.00952381 0.00952381 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Business_as_usual  Climate_change=false
+		   ( 0.104762 0.866667 0.00952381 0.00952381 0.00952381 ))	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Business_as_usual  Climate_change=true
+		  (( 0.104762 0.0571429 0.819048 0.00952381 0.00952381 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Realistic  Climate_change=false
+		   ( 0.104762 0.866667 0.00952381 0.00952381 0.00952381 ))	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Realistic  Climate_change=true
+		  (( 0.104762 0.2 0.67619 0.00952381 0.00952381 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Optimistic  Climate_change=false
+		   ( 0.104762 0.866667 0.00952381 0.00952381 0.00952381 ))	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Optimistic  Climate_change=true
+		  (( 0.104762 0.0571429 0.819048 0.00952381 0.00952381 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Current_level  Climate_change=false
+		   ( 0.00952381 0.485714 0.485714 0.00952381 0.00952381 ))))	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Current_level  Climate_change=true
+		(((( 0.104762 0.342857 0.533333 0.00952381 0.00952381 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Business_as_usual  Climate_change=false
+		   ( 0.104762 0.0571429 0.819048 0.00952381 0.00952381 ))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Business_as_usual  Climate_change=true
+		  (( 0.104762 0.533333 0.342857 0.00952381 0.00952381 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Realistic  Climate_change=false
+		   ( 0.104762 0.00952381 0.866667 0.00952381 0.00952381 ))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Realistic  Climate_change=true
+		  (( 0.104762 0.628571 0.247619 0.00952381 0.00952381 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Optimistic  Climate_change=false
+		   ( 0.104762 0.00952381 0.866667 0.00952381 0.00952381 ))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Optimistic  Climate_change=true
+		  (( 0.104762 0.152381 0.72381 0.00952381 0.00952381 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Current_level  Climate_change=false
+		   ( 0.00952381 0.104762 0.866667 0.00952381 0.00952381 )))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Current_level  Climate_change=true
+		 ((( 0.104762 0.866667 0.00952381 0.00952381 0.00952381 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Business_as_usual  Climate_change=false
+		   ( 0.0571429 0.0571429 0.866667 0.00952381 0.00952381 ))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Business_as_usual  Climate_change=true
+		  (( 0.104762 0.866667 0.00952381 0.00952381 0.00952381 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Realistic  Climate_change=false
+		   ( 0.104762 0.0571429 0.819048 0.00952381 0.00952381 ))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Realistic  Climate_change=true
+		  (( 0.104762 0.866667 0.00952381 0.00952381 0.00952381 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Optimistic  Climate_change=false
+		   ( 0.104762 0.0571429 0.819048 0.00952381 0.00952381 ))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Optimistic  Climate_change=true
+		  (( 0.104762 0.866667 0.00952381 0.00952381 0.00952381 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Current_level  Climate_change=false
+		   ( 0.00952381 0.104762 0.866667 0.00952381 0.00952381 ))))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Current_level  Climate_change=true
+		(((( 0.104762 0.0571429 0.819048 0.00952381 0.00952381 )	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Business_as_usual  Climate_change=false
+		   ( 0.104762 0.0571429 0.819048 0.00952381 0.00952381 ))	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Business_as_usual  Climate_change=true
+		  (( 0.104762 0.0571429 0.819048 0.00952381 0.00952381 )	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Realistic  Climate_change=false
+		   ( 0.104762 0.0571429 0.819048 0.00952381 0.00952381 ))	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Realistic  Climate_change=true
+		  (( 0.104762 0.104762 0.771429 0.00952381 0.00952381 )	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Optimistic  Climate_change=false
+		   ( 0.104762 0.0571429 0.819048 0.00952381 0.00952381 ))	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Optimistic  Climate_change=true
+		  (( 0.104762 0.0571429 0.819048 0.00952381 0.00952381 )	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Current_level  Climate_change=false
+		   ( 0.00952381 0.104762 0.866667 0.00952381 0.00952381 )))	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Current_level  Climate_change=true
+		 ((( 0.104762 0.247619 0.628571 0.00952381 0.00952381 )	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Business_as_usual  Climate_change=false
+		   ( 0.104762 0.0571429 0.819048 0.00952381 0.00952381 ))	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Business_as_usual  Climate_change=true
+		  (( 0.104762 0.0571429 0.819048 0.00952381 0.00952381 )	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Realistic  Climate_change=false
+		   ( 0.104762 0.0571429 0.819048 0.00952381 0.00952381 ))	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Realistic  Climate_change=true
+		  (( 0.104762 0.628571 0.247619 0.00952381 0.00952381 )	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Optimistic  Climate_change=false
+		   ( 0.104762 0.0571429 0.819048 0.00952381 0.00952381 ))	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Optimistic  Climate_change=true
+		  (( 0.104762 0.0571429 0.819048 0.00952381 0.00952381 )	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Current_level  Climate_change=false
+		   ( 0.00952381 0.104762 0.866667 0.00952381 0.00952381 )))));	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Current_level  Climate_change=true
+    }
+
+    potential (Ntot_1 | Scenario_Ru Scenario_Est Scenario_Fi Climate_change)
+    {
+	data = ((((( 0.719048 0.2 0.0666667 0.0142857 0 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Business_as_usual  Climate_change=false
+		   ( 0.57619 0.0571429 0.304762 0.0619048 0 ))	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Business_as_usual  Climate_change=true
+		  (( 0.814286 0.104762 0.0666667 0.0142857 0 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Realistic  Climate_change=false
+		   ( 0.57619 0.0571429 0.304762 0.0619048 0 ))	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Realistic  Climate_change=true
+		  (( 0.909524 0.0571429 0.0190476 0.0142857 0 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Optimistic  Climate_change=false
+		   ( 0.62381 0.152381 0.209524 0.0142857 0 ))	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Optimistic  Climate_change=true
+		  (( 0.62381 0.295238 0.0666667 0.0142857 0 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Current_level  Climate_change=false
+		   ( 0.528571 0.104762 0.304762 0.0619048 0 )))	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Current_level  Climate_change=true
+		 ((( 0.671429 0.247619 0.0666667 0.0142857 0 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Business_as_usual  Climate_change=false
+		   ( 0.57619 0.0571429 0.304762 0.0619048 0 ))	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Business_as_usual  Climate_change=true
+		  (( 0.671429 0.247619 0.0666667 0.0142857 0 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Realistic  Climate_change=false
+		   ( 0.57619 0.0571429 0.304762 0.0619048 0 ))	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Realistic  Climate_change=true
+		  (( 0.814286 0.104762 0.0666667 0.0142857 0 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Optimistic  Climate_change=false
+		   ( 0.62381 0.2 0.161905 0.0142857 0 ))	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Optimistic  Climate_change=true
+		  (( 0.62381 0.295238 0.0666667 0.0142857 0 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Current_level  Climate_change=false
+		   ( 0.528571 0.104762 0.304762 0.0619048 0 ))))	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Current_level  Climate_change=true
+		(((( 0.671429 0.247619 0.0666667 0.0142857 0 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Business_as_usual  Climate_change=false
+		   ( 0.528571 0.104762 0.304762 0.0619048 0 ))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Business_as_usual  Climate_change=true
+		  (( 0.671429 0.247619 0.0666667 0.0142857 0 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Realistic  Climate_change=false
+		   ( 0.528571 0.104762 0.304762 0.0619048 0 ))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Realistic  Climate_change=true
+		  (( 0.814286 0.104762 0.0666667 0.0142857 0 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Optimistic  Climate_change=false
+		   ( 0.57619 0.0571429 0.352381 0.0142857 0 ))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Optimistic  Climate_change=true
+		  (( 0.62381 0.295238 0.0666667 0.0142857 0 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Current_level  Climate_change=false
+		   ( 0.528571 0.104762 0.304762 0.0619048 0 )))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Current_level  Climate_change=true
+		 ((( 0.719048 0.2 0.0666667 0.0142857 0 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Business_as_usual  Climate_change=false
+		   ( 0.528571 0.104762 0.304762 0.0619048 0 ))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Business_as_usual  Climate_change=true
+		  (( 0.814286 0.104762 0.0666667 0.0142857 0 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Realistic  Climate_change=false
+		   ( 0.528571 0.104762 0.304762 0.0619048 0 ))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Realistic  Climate_change=true
+		  (( 0.909524 0.0571429 0.0190476 0.0142857 0 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Optimistic  Climate_change=false
+		   ( 0.57619 0.0571429 0.352381 0.0142857 0 ))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Optimistic  Climate_change=true
+		  (( 0.62381 0.295238 0.0666667 0.0142857 0 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Current_level  Climate_change=false
+		   ( 0.528571 0.104762 0.304762 0.0619048 0 ))))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Current_level  Climate_change=true
+		(((( 0.671429 0.247619 0.0666667 0.0142857 0 )	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Business_as_usual  Climate_change=false
+		   ( 0.528571 0.104762 0.304762 0.0619048 0 ))	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Business_as_usual  Climate_change=true
+		  (( 0.671429 0.247619 0.0666667 0.0142857 0 )	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Realistic  Climate_change=false
+		   ( 0.528571 0.104762 0.304762 0.0619048 0 ))	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Realistic  Climate_change=true
+		  (( 0.814286 0.104762 0.0666667 0.0142857 0 )	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Optimistic  Climate_change=false
+		   ( 0.57619 0.152381 0.257143 0.0142857 0 ))	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Optimistic  Climate_change=true
+		  (( 0.62381 0.295238 0.0666667 0.0142857 0 )	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Current_level  Climate_change=false
+		   ( 0.528571 0.104762 0.304762 0.0619048 0 )))	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Current_level  Climate_change=true
+		 ((( 0.671429 0.247619 0.0666667 0.0142857 0 )	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Business_as_usual  Climate_change=false
+		   ( 0.528571 0.104762 0.304762 0.0619048 0 ))	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Business_as_usual  Climate_change=true
+		  (( 0.671429 0.247619 0.0666667 0.0142857 0 )	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Realistic  Climate_change=false
+		   ( 0.528571 0.104762 0.304762 0.0619048 0 ))	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Realistic  Climate_change=true
+		  (( 0.814286 0.104762 0.0666667 0.0142857 0 )	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Optimistic  Climate_change=false
+		   ( 0.57619 0.0571429 0.352381 0.0142857 0 ))	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Optimistic  Climate_change=true
+		  (( 0.62381 0.295238 0.0666667 0.0142857 0 )	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Current_level  Climate_change=false
+		   ( 0.528571 0.104762 0.304762 0.0619048 0 )))));	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Current_level  Climate_change=true
+    }
+
+    potential (Oxygen_1 | Scenario_Ru Scenario_Est Scenario_Fi Climate_change)
+    {
+	data = ((((( 0.5 0.5 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Business_as_usual  Climate_change=false
+		   ( 0.404762 0.595238 ))	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Business_as_usual  Climate_change=true
+		  (( 0.5 0.5 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Realistic  Climate_change=false
+		   ( 0.452381 0.547619 ))	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Realistic  Climate_change=true
+		  (( 0.547619 0.452381 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Optimistic  Climate_change=false
+		   ( 0.5 0.5 ))	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Optimistic  Climate_change=true
+		  (( 0.5 0.5 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Current_level  Climate_change=false
+		   ( 0.404762 0.595238 )))	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Current_level  Climate_change=true
+		 ((( 0.404762 0.595238 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Business_as_usual  Climate_change=false
+		   ( 0.5 0.5 ))	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Business_as_usual  Climate_change=true
+		  (( 0.404762 0.595238 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Realistic  Climate_change=false
+		   ( 0.547619 0.452381 ))	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Realistic  Climate_change=true
+		  (( 0.404762 0.595238 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Optimistic  Climate_change=false
+		   ( 0.547619 0.452381 ))	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Optimistic  Climate_change=true
+		  (( 0.404762 0.595238 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Current_level  Climate_change=false
+		   ( 0.404762 0.595238 ))))	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Current_level  Climate_change=true
+		(((( 0.404762 0.595238 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Business_as_usual  Climate_change=false
+		   ( 0.404762 0.595238 ))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Business_as_usual  Climate_change=true
+		  (( 0.404762 0.595238 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Realistic  Climate_change=false
+		   ( 0.404762 0.595238 ))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Realistic  Climate_change=true
+		  (( 0.404762 0.595238 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Optimistic  Climate_change=false
+		   ( 0.404762 0.595238 ))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Optimistic  Climate_change=true
+		  (( 0.404762 0.595238 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Current_level  Climate_change=false
+		   ( 0.404762 0.595238 )))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Current_level  Climate_change=true
+		 ((( 0.5 0.5 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Business_as_usual  Climate_change=false
+		   ( 0.404762 0.595238 ))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Business_as_usual  Climate_change=true
+		  (( 0.547619 0.452381 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Realistic  Climate_change=false
+		   ( 0.404762 0.595238 ))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Realistic  Climate_change=true
+		  (( 0.547619 0.452381 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Optimistic  Climate_change=false
+		   ( 0.404762 0.595238 ))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Optimistic  Climate_change=true
+		  (( 0.5 0.5 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Current_level  Climate_change=false
+		   ( 0.404762 0.595238 ))))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Current_level  Climate_change=true
+		(((( 0.404762 0.595238 )	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Business_as_usual  Climate_change=false
+		   ( 0.404762 0.595238 ))	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Business_as_usual  Climate_change=true
+		  (( 0.404762 0.595238 )	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Realistic  Climate_change=false
+		   ( 0.404762 0.595238 ))	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Realistic  Climate_change=true
+		  (( 0.404762 0.595238 )	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Optimistic  Climate_change=false
+		   ( 0.404762 0.595238 ))	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Optimistic  Climate_change=true
+		  (( 0.404762 0.595238 )	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Current_level  Climate_change=false
+		   ( 0.404762 0.595238 )))	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Current_level  Climate_change=true
+		 ((( 0.404762 0.595238 )	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Business_as_usual  Climate_change=false
+		   ( 0.404762 0.595238 ))	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Business_as_usual  Climate_change=true
+		  (( 0.404762 0.595238 )	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Realistic  Climate_change=false
+		   ( 0.404762 0.595238 ))	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Realistic  Climate_change=true
+		  (( 0.404762 0.595238 )	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Optimistic  Climate_change=false
+		   ( 0.404762 0.595238 ))	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Optimistic  Climate_change=true
+		  (( 0.404762 0.595238 )	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Current_level  Climate_change=false
+		   ( 0.404762 0.595238 )))));	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Current_level  Climate_change=true
+    }
+
+    potential (Chlorophyll_a_1 | Scenario_Ru Scenario_Est Scenario_Fi Climate_change)
+    {
+	data = ((((( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Business_as_usual  Climate_change=false
+		   ( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 ))	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Business_as_usual  Climate_change=true
+		  (( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Realistic  Climate_change=false
+		   ( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 ))	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Realistic  Climate_change=true
+		  (( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Optimistic  Climate_change=false
+		   ( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 ))	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Optimistic  Climate_change=true
+		  (( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Current_level  Climate_change=false
+		   ( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 )))	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Current_level  Climate_change=true
+		 ((( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Business_as_usual  Climate_change=false
+		   ( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 ))	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Business_as_usual  Climate_change=true
+		  (( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Realistic  Climate_change=false
+		   ( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 ))	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Realistic  Climate_change=true
+		  (( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Optimistic  Climate_change=false
+		   ( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 ))	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Optimistic  Climate_change=true
+		  (( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Current_level  Climate_change=false
+		   ( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 ))))	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Current_level  Climate_change=true
+		(((( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Business_as_usual  Climate_change=false
+		   ( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 ))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Business_as_usual  Climate_change=true
+		  (( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Realistic  Climate_change=false
+		   ( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 ))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Realistic  Climate_change=true
+		  (( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Optimistic  Climate_change=false
+		   ( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 ))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Optimistic  Climate_change=true
+		  (( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Current_level  Climate_change=false
+		   ( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 )))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Current_level  Climate_change=true
+		 ((( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Business_as_usual  Climate_change=false
+		   ( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 ))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Business_as_usual  Climate_change=true
+		  (( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Realistic  Climate_change=false
+		   ( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 ))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Realistic  Climate_change=true
+		  (( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Optimistic  Climate_change=false
+		   ( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 ))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Optimistic  Climate_change=true
+		  (( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Current_level  Climate_change=false
+		   ( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 ))))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Current_level  Climate_change=true
+		(((( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 )	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Business_as_usual  Climate_change=false
+		   ( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 ))	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Business_as_usual  Climate_change=true
+		  (( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 )	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Realistic  Climate_change=false
+		   ( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 ))	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Realistic  Climate_change=true
+		  (( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 )	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Optimistic  Climate_change=false
+		   ( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 ))	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Optimistic  Climate_change=true
+		  (( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 )	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Current_level  Climate_change=false
+		   ( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 )))	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Current_level  Climate_change=true
+		 ((( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 )	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Business_as_usual  Climate_change=false
+		   ( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 ))	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Business_as_usual  Climate_change=true
+		  (( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 )	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Realistic  Climate_change=false
+		   ( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 ))	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Realistic  Climate_change=true
+		  (( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 )	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Optimistic  Climate_change=false
+		   ( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 ))	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Optimistic  Climate_change=true
+		  (( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 )	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Current_level  Climate_change=false
+		   ( 0.00952381 0.00952381 0.961905 0.00952381 0.00952381 )))));	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Current_level  Climate_change=true
+    }
+
+    potential (Secchi_1 | Scenario_Ru Scenario_Est Scenario_Fi Climate_change)
+    {
+	data = ((((( 0.0190476 0.0047619 0.00952381 0.966667 0 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Business_as_usual  Climate_change=false
+		   ( 0.0190476 0.0047619 0.00952381 0.966667 0 ))	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Business_as_usual  Climate_change=true
+		  (( 0.0190476 0.0047619 0.00952381 0.966667 0 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Realistic  Climate_change=false
+		   ( 0.0190476 0.0047619 0.00952381 0.966667 0 ))	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Realistic  Climate_change=true
+		  (( 0.0190476 0.0047619 0.00952381 0.966667 0 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Optimistic  Climate_change=false
+		   ( 0.0190476 0.0047619 0.00952381 0.966667 0 ))	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Optimistic  Climate_change=true
+		  (( 0.0190476 0.0047619 0.00952381 0.966667 0 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Current_level  Climate_change=false
+		   ( 0.0190476 0.0047619 0.00952381 0.966667 0 )))	%  Scenario_Ru=Current_facilities  Scenario_Est=Current_level  Scenario_Fi=Current_level  Climate_change=true
+		 ((( 0.0190476 0.0047619 0.00952381 0.966667 0 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Business_as_usual  Climate_change=false
+		   ( 0.0190476 0.0047619 0.00952381 0.966667 0 ))	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Business_as_usual  Climate_change=true
+		  (( 0.0190476 0.0047619 0.00952381 0.966667 0 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Realistic  Climate_change=false
+		   ( 0.0190476 0.0047619 0.00952381 0.966667 0 ))	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Realistic  Climate_change=true
+		  (( 0.0190476 0.0047619 0.00952381 0.966667 0 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Optimistic  Climate_change=false
+		   ( 0.0190476 0.0047619 0.00952381 0.966667 0 ))	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Optimistic  Climate_change=true
+		  (( 0.0190476 0.0047619 0.00952381 0.966667 0 )	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Current_level  Climate_change=false
+		   ( 0.0190476 0.0047619 0.00952381 0.966667 0 ))))	%  Scenario_Ru=Current_facilities  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Current_level  Climate_change=true
+		(((( 0.0190476 0.0047619 0.00952381 0.966667 0 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Business_as_usual  Climate_change=false
+		   ( 0.0190476 0.0047619 0.00952381 0.966667 0 ))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Business_as_usual  Climate_change=true
+		  (( 0.0190476 0.0047619 0.00952381 0.966667 0 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Realistic  Climate_change=false
+		   ( 0.0190476 0.0047619 0.00952381 0.966667 0 ))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Realistic  Climate_change=true
+		  (( 0.0190476 0.0047619 0.00952381 0.966667 0 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Optimistic  Climate_change=false
+		   ( 0.0190476 0.0047619 0.00952381 0.966667 0 ))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Optimistic  Climate_change=true
+		  (( 0.0190476 0.0047619 0.00952381 0.966667 0 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Current_level  Climate_change=false
+		   ( 0.0190476 0.0047619 0.00952381 0.966667 0 )))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Current_level  Scenario_Fi=Current_level  Climate_change=true
+		 ((( 0.0190476 0.0047619 0.00952381 0.966667 0 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Business_as_usual  Climate_change=false
+		   ( 0.0190476 0.0047619 0.00952381 0.966667 0 ))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Business_as_usual  Climate_change=true
+		  (( 0.0190476 0.0047619 0.00952381 0.966667 0 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Realistic  Climate_change=false
+		   ( 0.0190476 0.0047619 0.00952381 0.966667 0 ))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Realistic  Climate_change=true
+		  (( 0.0190476 0.0047619 0.00952381 0.966667 0 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Optimistic  Climate_change=false
+		   ( 0.0190476 0.0047619 0.00952381 0.966667 0 ))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Optimistic  Climate_change=true
+		  (( 0.0190476 0.0047619 0.00952381 0.966667 0 )	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Current_level  Climate_change=false
+		   ( 0.0190476 0.0047619 0.00952381 0.966667 0 ))))	%  Scenario_Ru=All_mww_treated  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Current_level  Climate_change=true
+		(((( 0.0190476 0.0047619 0.00952381 0.966667 0 )	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Business_as_usual  Climate_change=false
+		   ( 0.0190476 0.0047619 0.00952381 0.966667 0 ))	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Business_as_usual  Climate_change=true
+		  (( 0.0190476 0.0047619 0.00952381 0.966667 0 )	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Realistic  Climate_change=false
+		   ( 0.0190476 0.0047619 0.00952381 0.966667 0 ))	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Realistic  Climate_change=true
+		  (( 0.0190476 0.0047619 0.00952381 0.966667 0 )	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Optimistic  Climate_change=false
+		   ( 0.0190476 0.0047619 0.00952381 0.966667 0 ))	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Optimistic  Climate_change=true
+		  (( 0.0190476 0.0047619 0.00952381 0.966667 0 )	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Current_level  Climate_change=false
+		   ( 0.0190476 0.0047619 0.00952381 0.966667 0 )))	%  Scenario_Ru=Current_level  Scenario_Est=Current_level  Scenario_Fi=Current_level  Climate_change=true
+		 ((( 0.0190476 0.0047619 0.00952381 0.966667 0 )	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Business_as_usual  Climate_change=false
+		   ( 0.0190476 0.0047619 0.00952381 0.966667 0 ))	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Business_as_usual  Climate_change=true
+		  (( 0.0190476 0.0047619 0.00952381 0.966667 0 )	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Realistic  Climate_change=false
+		   ( 0.0190476 0.0047619 0.00952381 0.966667 0 ))	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Realistic  Climate_change=true
+		  (( 0.0190476 0.0047619 0.00952381 0.966667 0 )	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Optimistic  Climate_change=false
+		   ( 0.0190476 0.0047619 0.00952381 0.966667 0 ))	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Optimistic  Climate_change=true
+		  (( 0.0190476 0.0047619 0.00952381 0.966667 0 )	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Current_level  Climate_change=false
+		   ( 0.0190476 0.0047619 0.00952381 0.966667 0 )))));	%  Scenario_Ru=Current_level  Scenario_Est=Increasing_agricultural_load  Scenario_Fi=Current_level  Climate_change=true
+    }
+
+    potential (Scenario_Ru)
+    {
+	data = ( 0.333333 0.333333 0.333333 );
+    }
+
+    potential (Scenario_Est)
+    {
+	data = ( 0.5 0.5 );
+    }
+
+    potential (Scenario_Fi)
+    {
+	data = ( 0.25 0.25 0.25 0.25 );
+    }
+
+    potential (Climate_change)
+    {
+	data = ( 0.5 0.5 );
+    }
+
+    potential (Salinity_bottom_1)
+    {
+	data = ( 0.00219222 0.0445525 0.951063 0.00219222 );
+	experience = 226;
+    }
+
+    potential (Fucus_wfd_class_1 | Fucus1_wfd_CF_Fucus_exp Fucus1_wfd_CF_Fucus_sh)
+    {
+	model_nodes = ();
+	model_data = ( if ((Fucus1_wfd_CF_Fucus_exp + Fucus1_wfd_CF_Fucus_sh) / 2 < 0.2, "Bad", if (and ((Fucus1_wfd_CF_Fucus_exp + Fucus1_wfd_CF_Fucus_sh) / 2 >= 0.2, (Fucus1_wfd_CF_Fucus_exp + Fucus1_wfd_CF_Fucus_sh) / 2 < 0.4), "Poor", if (and ((Fucus1_wfd_CF_Fucus_exp + Fucus1_wfd_CF_Fucus_sh) / 2 >= 0.4, (Fucus1_wfd_CF_Fucus_exp + Fucus1_wfd_CF_Fucus_sh) / 2 < 0.6), "Moderate", if ((Fucus1_wfd_CF_Fucus_exp + Fucus1_wfd_CF_Fucus_sh) / 2 >= 0.8, "High", "Good")))) );
+    }
+
+    potential (General_wfd_class_1 | CF_Fucus CF_Secchi CF_Chlora CF_Ntot)
+    {
+	model_nodes = ();
+	model_data = ( if ((CF_Fucus + CF_Secchi + CF_Chlora + CF_Ntot) / 4 < 0.2, "Bad", if (and ((CF_Fucus + CF_Secchi + CF_Chlora + CF_Ntot) / 4 >= 0.2, (CF_Fucus + CF_Secchi + CF_Chlora + CF_Ntot) / 4 < 0.4), "Poor", if (and ((CF_Fucus + CF_Secchi + CF_Chlora + CF_Ntot) / 4 >= 0.4, (CF_Fucus + CF_Secchi + CF_Chlora + CF_Ntot) / 4 < 0.6), "Moderate", if ((CF_Fucus + CF_Secchi + CF_Chlora + CF_Ntot) / 4 >= 0.8, "High", "Good")))) );
+	data = ((((( 0 0 0 0 1 )	%  CF_Fucus=0.1  CF_Secchi=0.1  CF_Chlora=0.1  CF_Ntot=0.1
+		   ( 0 0 0 0 1 )	%  CF_Fucus=0.1  CF_Secchi=0.1  CF_Chlora=0.1  CF_Ntot=0.3
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.1  CF_Chlora=0.1  CF_Ntot=0.5
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.1  CF_Chlora=0.1  CF_Ntot=0.8
+		   ( 0 0 0 1 0 ))	%  CF_Fucus=0.1  CF_Secchi=0.1  CF_Chlora=0.1  CF_Ntot=1
+		  (( 0 0 0 0 1 )	%  CF_Fucus=0.1  CF_Secchi=0.1  CF_Chlora=0.3  CF_Ntot=0.1
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.1  CF_Chlora=0.3  CF_Ntot=0.3
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.1  CF_Chlora=0.3  CF_Ntot=0.5
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.1  CF_Chlora=0.3  CF_Ntot=0.8
+		   ( 0 0 0 1 0 ))	%  CF_Fucus=0.1  CF_Secchi=0.1  CF_Chlora=0.3  CF_Ntot=1
+		  (( 0 0 0 0 1 )	%  CF_Fucus=0.1  CF_Secchi=0.1  CF_Chlora=0.5  CF_Ntot=0.1
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.1  CF_Chlora=0.5  CF_Ntot=0.3
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.1  CF_Chlora=0.5  CF_Ntot=0.5
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.1  CF_Chlora=0.5  CF_Ntot=0.8
+		   ( 0 0 1 0 0 ))	%  CF_Fucus=0.1  CF_Secchi=0.1  CF_Chlora=0.5  CF_Ntot=1
+		  (( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.1  CF_Chlora=0.8  CF_Ntot=0.1
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.1  CF_Chlora=0.8  CF_Ntot=0.3
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.1  CF_Chlora=0.8  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=0.1  CF_Chlora=0.8  CF_Ntot=0.8
+		   ( 0 0 1 0 0 ))	%  CF_Fucus=0.1  CF_Secchi=0.1  CF_Chlora=0.8  CF_Ntot=1
+		  (( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.1  CF_Chlora=1  CF_Ntot=0.1
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.1  CF_Chlora=1  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=0.1  CF_Chlora=1  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=0.1  CF_Chlora=1  CF_Ntot=0.8
+		   ( 0 0 1 0 0 )))	%  CF_Fucus=0.1  CF_Secchi=0.1  CF_Chlora=1  CF_Ntot=1
+		 ((( 0 0 0 0 1 )	%  CF_Fucus=0.1  CF_Secchi=0.3  CF_Chlora=0.1  CF_Ntot=0.1
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.3  CF_Chlora=0.1  CF_Ntot=0.3
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.3  CF_Chlora=0.1  CF_Ntot=0.5
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.3  CF_Chlora=0.1  CF_Ntot=0.8
+		   ( 0 0 0 1 0 ))	%  CF_Fucus=0.1  CF_Secchi=0.3  CF_Chlora=0.1  CF_Ntot=1
+		  (( 0 0 0 0 1 )	%  CF_Fucus=0.1  CF_Secchi=0.3  CF_Chlora=0.3  CF_Ntot=0.1
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.3  CF_Chlora=0.3  CF_Ntot=0.3
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.3  CF_Chlora=0.3  CF_Ntot=0.5
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.3  CF_Chlora=0.3  CF_Ntot=0.8
+		   ( 0 0 1 0 0 ))	%  CF_Fucus=0.1  CF_Secchi=0.3  CF_Chlora=0.3  CF_Ntot=1
+		  (( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.3  CF_Chlora=0.5  CF_Ntot=0.1
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.3  CF_Chlora=0.5  CF_Ntot=0.3
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.3  CF_Chlora=0.5  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=0.3  CF_Chlora=0.5  CF_Ntot=0.8
+		   ( 0 0 1 0 0 ))	%  CF_Fucus=0.1  CF_Secchi=0.3  CF_Chlora=0.5  CF_Ntot=1
+		  (( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.3  CF_Chlora=0.8  CF_Ntot=0.1
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.3  CF_Chlora=0.8  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=0.3  CF_Chlora=0.8  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=0.3  CF_Chlora=0.8  CF_Ntot=0.8
+		   ( 0 0 1 0 0 ))	%  CF_Fucus=0.1  CF_Secchi=0.3  CF_Chlora=0.8  CF_Ntot=1
+		  (( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.3  CF_Chlora=1  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=0.3  CF_Chlora=1  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=0.3  CF_Chlora=1  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=0.3  CF_Chlora=1  CF_Ntot=0.8
+		   ( 0 1 0 0 0 )))	%  CF_Fucus=0.1  CF_Secchi=0.3  CF_Chlora=1  CF_Ntot=1
+		 ((( 0 0 0 0 1 )	%  CF_Fucus=0.1  CF_Secchi=0.5  CF_Chlora=0.1  CF_Ntot=0.1
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.5  CF_Chlora=0.1  CF_Ntot=0.3
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.5  CF_Chlora=0.1  CF_Ntot=0.5
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.5  CF_Chlora=0.1  CF_Ntot=0.8
+		   ( 0 0 1 0 0 ))	%  CF_Fucus=0.1  CF_Secchi=0.5  CF_Chlora=0.1  CF_Ntot=1
+		  (( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.5  CF_Chlora=0.3  CF_Ntot=0.1
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.5  CF_Chlora=0.3  CF_Ntot=0.3
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.5  CF_Chlora=0.3  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=0.5  CF_Chlora=0.3  CF_Ntot=0.8
+		   ( 0 0 1 0 0 ))	%  CF_Fucus=0.1  CF_Secchi=0.5  CF_Chlora=0.3  CF_Ntot=1
+		  (( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.5  CF_Chlora=0.5  CF_Ntot=0.1
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.5  CF_Chlora=0.5  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=0.5  CF_Chlora=0.5  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=0.5  CF_Chlora=0.5  CF_Ntot=0.8
+		   ( 0 0 1 0 0 ))	%  CF_Fucus=0.1  CF_Secchi=0.5  CF_Chlora=0.5  CF_Ntot=1
+		  (( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.5  CF_Chlora=0.8  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=0.5  CF_Chlora=0.8  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=0.5  CF_Chlora=0.8  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=0.5  CF_Chlora=0.8  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.1  CF_Secchi=0.5  CF_Chlora=0.8  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=0.5  CF_Chlora=1  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=0.5  CF_Chlora=1  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=0.5  CF_Chlora=1  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.1  CF_Secchi=0.5  CF_Chlora=1  CF_Ntot=0.8
+		   ( 0 1 0 0 0 )))	%  CF_Fucus=0.1  CF_Secchi=0.5  CF_Chlora=1  CF_Ntot=1
+		 ((( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.8  CF_Chlora=0.1  CF_Ntot=0.1
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.8  CF_Chlora=0.1  CF_Ntot=0.3
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.8  CF_Chlora=0.1  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=0.8  CF_Chlora=0.1  CF_Ntot=0.8
+		   ( 0 0 1 0 0 ))	%  CF_Fucus=0.1  CF_Secchi=0.8  CF_Chlora=0.1  CF_Ntot=1
+		  (( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.8  CF_Chlora=0.3  CF_Ntot=0.1
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.8  CF_Chlora=0.3  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=0.8  CF_Chlora=0.3  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=0.8  CF_Chlora=0.3  CF_Ntot=0.8
+		   ( 0 0 1 0 0 ))	%  CF_Fucus=0.1  CF_Secchi=0.8  CF_Chlora=0.3  CF_Ntot=1
+		  (( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=0.8  CF_Chlora=0.5  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=0.8  CF_Chlora=0.5  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=0.8  CF_Chlora=0.5  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=0.8  CF_Chlora=0.5  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.1  CF_Secchi=0.8  CF_Chlora=0.5  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=0.8  CF_Chlora=0.8  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=0.8  CF_Chlora=0.8  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=0.8  CF_Chlora=0.8  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.1  CF_Secchi=0.8  CF_Chlora=0.8  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.1  CF_Secchi=0.8  CF_Chlora=0.8  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=0.8  CF_Chlora=1  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=0.8  CF_Chlora=1  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.1  CF_Secchi=0.8  CF_Chlora=1  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.1  CF_Secchi=0.8  CF_Chlora=1  CF_Ntot=0.8
+		   ( 0 1 0 0 0 )))	%  CF_Fucus=0.1  CF_Secchi=0.8  CF_Chlora=1  CF_Ntot=1
+		 ((( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=1  CF_Chlora=0.1  CF_Ntot=0.1
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=1  CF_Chlora=0.1  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=1  CF_Chlora=0.1  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=1  CF_Chlora=0.1  CF_Ntot=0.8
+		   ( 0 0 1 0 0 ))	%  CF_Fucus=0.1  CF_Secchi=1  CF_Chlora=0.1  CF_Ntot=1
+		  (( 0 0 0 1 0 )	%  CF_Fucus=0.1  CF_Secchi=1  CF_Chlora=0.3  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=1  CF_Chlora=0.3  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=1  CF_Chlora=0.3  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=1  CF_Chlora=0.3  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.1  CF_Secchi=1  CF_Chlora=0.3  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=1  CF_Chlora=0.5  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=1  CF_Chlora=0.5  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=1  CF_Chlora=0.5  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.1  CF_Secchi=1  CF_Chlora=0.5  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.1  CF_Secchi=1  CF_Chlora=0.5  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=1  CF_Chlora=0.8  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=1  CF_Chlora=0.8  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.1  CF_Secchi=1  CF_Chlora=0.8  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.1  CF_Secchi=1  CF_Chlora=0.8  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.1  CF_Secchi=1  CF_Chlora=0.8  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.1  CF_Secchi=1  CF_Chlora=1  CF_Ntot=0.1
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.1  CF_Secchi=1  CF_Chlora=1  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.1  CF_Secchi=1  CF_Chlora=1  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.1  CF_Secchi=1  CF_Chlora=1  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))))	%  CF_Fucus=0.1  CF_Secchi=1  CF_Chlora=1  CF_Ntot=1
+		(((( 0 0 0 0 1 )	%  CF_Fucus=0.3  CF_Secchi=0.1  CF_Chlora=0.1  CF_Ntot=0.1
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.3  CF_Secchi=0.1  CF_Chlora=0.1  CF_Ntot=0.3
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.3  CF_Secchi=0.1  CF_Chlora=0.1  CF_Ntot=0.5
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.3  CF_Secchi=0.1  CF_Chlora=0.1  CF_Ntot=0.8
+		   ( 0 0 0 1 0 ))	%  CF_Fucus=0.3  CF_Secchi=0.1  CF_Chlora=0.1  CF_Ntot=1
+		  (( 0 0 0 0 1 )	%  CF_Fucus=0.3  CF_Secchi=0.1  CF_Chlora=0.3  CF_Ntot=0.1
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.3  CF_Secchi=0.1  CF_Chlora=0.3  CF_Ntot=0.3
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.3  CF_Secchi=0.1  CF_Chlora=0.3  CF_Ntot=0.5
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.3  CF_Secchi=0.1  CF_Chlora=0.3  CF_Ntot=0.8
+		   ( 0 0 1 0 0 ))	%  CF_Fucus=0.3  CF_Secchi=0.1  CF_Chlora=0.3  CF_Ntot=1
+		  (( 0 0 0 1 0 )	%  CF_Fucus=0.3  CF_Secchi=0.1  CF_Chlora=0.5  CF_Ntot=0.1
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.3  CF_Secchi=0.1  CF_Chlora=0.5  CF_Ntot=0.3
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.3  CF_Secchi=0.1  CF_Chlora=0.5  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.1  CF_Chlora=0.5  CF_Ntot=0.8
+		   ( 0 0 1 0 0 ))	%  CF_Fucus=0.3  CF_Secchi=0.1  CF_Chlora=0.5  CF_Ntot=1
+		  (( 0 0 0 1 0 )	%  CF_Fucus=0.3  CF_Secchi=0.1  CF_Chlora=0.8  CF_Ntot=0.1
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.3  CF_Secchi=0.1  CF_Chlora=0.8  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.1  CF_Chlora=0.8  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.1  CF_Chlora=0.8  CF_Ntot=0.8
+		   ( 0 0 1 0 0 ))	%  CF_Fucus=0.3  CF_Secchi=0.1  CF_Chlora=0.8  CF_Ntot=1
+		  (( 0 0 0 1 0 )	%  CF_Fucus=0.3  CF_Secchi=0.1  CF_Chlora=1  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.1  CF_Chlora=1  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.1  CF_Chlora=1  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.1  CF_Chlora=1  CF_Ntot=0.8
+		   ( 0 1 0 0 0 )))	%  CF_Fucus=0.3  CF_Secchi=0.1  CF_Chlora=1  CF_Ntot=1
+		 ((( 0 0 0 0 1 )	%  CF_Fucus=0.3  CF_Secchi=0.3  CF_Chlora=0.1  CF_Ntot=0.1
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.3  CF_Secchi=0.3  CF_Chlora=0.1  CF_Ntot=0.3
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.3  CF_Secchi=0.3  CF_Chlora=0.1  CF_Ntot=0.5
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.3  CF_Secchi=0.3  CF_Chlora=0.1  CF_Ntot=0.8
+		   ( 0 0 1 0 0 ))	%  CF_Fucus=0.3  CF_Secchi=0.3  CF_Chlora=0.1  CF_Ntot=1
+		  (( 0 0 0 1 0 )	%  CF_Fucus=0.3  CF_Secchi=0.3  CF_Chlora=0.3  CF_Ntot=0.1
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.3  CF_Secchi=0.3  CF_Chlora=0.3  CF_Ntot=0.3
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.3  CF_Secchi=0.3  CF_Chlora=0.3  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.3  CF_Chlora=0.3  CF_Ntot=0.8
+		   ( 0 0 1 0 0 ))	%  CF_Fucus=0.3  CF_Secchi=0.3  CF_Chlora=0.3  CF_Ntot=1
+		  (( 0 0 0 1 0 )	%  CF_Fucus=0.3  CF_Secchi=0.3  CF_Chlora=0.5  CF_Ntot=0.1
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.3  CF_Secchi=0.3  CF_Chlora=0.5  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.3  CF_Chlora=0.5  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.3  CF_Chlora=0.5  CF_Ntot=0.8
+		   ( 0 0 1 0 0 ))	%  CF_Fucus=0.3  CF_Secchi=0.3  CF_Chlora=0.5  CF_Ntot=1
+		  (( 0 0 0 1 0 )	%  CF_Fucus=0.3  CF_Secchi=0.3  CF_Chlora=0.8  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.3  CF_Chlora=0.8  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.3  CF_Chlora=0.8  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.3  CF_Chlora=0.8  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.3  CF_Secchi=0.3  CF_Chlora=0.8  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.3  CF_Chlora=1  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.3  CF_Chlora=1  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.3  CF_Chlora=1  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.3  CF_Chlora=1  CF_Ntot=0.8
+		   ( 0 1 0 0 0 )))	%  CF_Fucus=0.3  CF_Secchi=0.3  CF_Chlora=1  CF_Ntot=1
+		 ((( 0 0 0 1 0 )	%  CF_Fucus=0.3  CF_Secchi=0.5  CF_Chlora=0.1  CF_Ntot=0.1
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.3  CF_Secchi=0.5  CF_Chlora=0.1  CF_Ntot=0.3
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.3  CF_Secchi=0.5  CF_Chlora=0.1  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.5  CF_Chlora=0.1  CF_Ntot=0.8
+		   ( 0 0 1 0 0 ))	%  CF_Fucus=0.3  CF_Secchi=0.5  CF_Chlora=0.1  CF_Ntot=1
+		  (( 0 0 0 1 0 )	%  CF_Fucus=0.3  CF_Secchi=0.5  CF_Chlora=0.3  CF_Ntot=0.1
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.3  CF_Secchi=0.5  CF_Chlora=0.3  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.5  CF_Chlora=0.3  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.5  CF_Chlora=0.3  CF_Ntot=0.8
+		   ( 0 0 1 0 0 ))	%  CF_Fucus=0.3  CF_Secchi=0.5  CF_Chlora=0.3  CF_Ntot=1
+		  (( 0 0 0 1 0 )	%  CF_Fucus=0.3  CF_Secchi=0.5  CF_Chlora=0.5  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.5  CF_Chlora=0.5  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.5  CF_Chlora=0.5  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.5  CF_Chlora=0.5  CF_Ntot=0.8
+		   ( 0 0 1 0 0 ))	%  CF_Fucus=0.3  CF_Secchi=0.5  CF_Chlora=0.5  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.5  CF_Chlora=0.8  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.5  CF_Chlora=0.8  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.5  CF_Chlora=0.8  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.5  CF_Chlora=0.8  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.3  CF_Secchi=0.5  CF_Chlora=0.8  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.5  CF_Chlora=1  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.5  CF_Chlora=1  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.5  CF_Chlora=1  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.5  CF_Chlora=1  CF_Ntot=0.8
+		   ( 0 1 0 0 0 )))	%  CF_Fucus=0.3  CF_Secchi=0.5  CF_Chlora=1  CF_Ntot=1
+		 ((( 0 0 0 1 0 )	%  CF_Fucus=0.3  CF_Secchi=0.8  CF_Chlora=0.1  CF_Ntot=0.1
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.3  CF_Secchi=0.8  CF_Chlora=0.1  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.8  CF_Chlora=0.1  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.8  CF_Chlora=0.1  CF_Ntot=0.8
+		   ( 0 0 1 0 0 ))	%  CF_Fucus=0.3  CF_Secchi=0.8  CF_Chlora=0.1  CF_Ntot=1
+		  (( 0 0 0 1 0 )	%  CF_Fucus=0.3  CF_Secchi=0.8  CF_Chlora=0.3  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.8  CF_Chlora=0.3  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.8  CF_Chlora=0.3  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.8  CF_Chlora=0.3  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.3  CF_Secchi=0.8  CF_Chlora=0.3  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.8  CF_Chlora=0.5  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.8  CF_Chlora=0.5  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.8  CF_Chlora=0.5  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.8  CF_Chlora=0.5  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.3  CF_Secchi=0.8  CF_Chlora=0.5  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.8  CF_Chlora=0.8  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.8  CF_Chlora=0.8  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.8  CF_Chlora=0.8  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.8  CF_Chlora=0.8  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.3  CF_Secchi=0.8  CF_Chlora=0.8  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.8  CF_Chlora=1  CF_Ntot=0.1
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.8  CF_Chlora=1  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.8  CF_Chlora=1  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.3  CF_Secchi=0.8  CF_Chlora=1  CF_Ntot=0.8
+		   ( 0 1 0 0 0 )))	%  CF_Fucus=0.3  CF_Secchi=0.8  CF_Chlora=1  CF_Ntot=1
+		 ((( 0 0 0 1 0 )	%  CF_Fucus=0.3  CF_Secchi=1  CF_Chlora=0.1  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=1  CF_Chlora=0.1  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=1  CF_Chlora=0.1  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=1  CF_Chlora=0.1  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.3  CF_Secchi=1  CF_Chlora=0.1  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=1  CF_Chlora=0.3  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=1  CF_Chlora=0.3  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=1  CF_Chlora=0.3  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.3  CF_Secchi=1  CF_Chlora=0.3  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.3  CF_Secchi=1  CF_Chlora=0.3  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=1  CF_Chlora=0.5  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=1  CF_Chlora=0.5  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=1  CF_Chlora=0.5  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.3  CF_Secchi=1  CF_Chlora=0.5  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.3  CF_Secchi=1  CF_Chlora=0.5  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.3  CF_Secchi=1  CF_Chlora=0.8  CF_Ntot=0.1
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.3  CF_Secchi=1  CF_Chlora=0.8  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.3  CF_Secchi=1  CF_Chlora=0.8  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.3  CF_Secchi=1  CF_Chlora=0.8  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.3  CF_Secchi=1  CF_Chlora=0.8  CF_Ntot=1
+		  (( 0 1 0 0 0 )	%  CF_Fucus=0.3  CF_Secchi=1  CF_Chlora=1  CF_Ntot=0.1
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.3  CF_Secchi=1  CF_Chlora=1  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.3  CF_Secchi=1  CF_Chlora=1  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.3  CF_Secchi=1  CF_Chlora=1  CF_Ntot=0.8
+		   ( 1 0 0 0 0 ))))	%  CF_Fucus=0.3  CF_Secchi=1  CF_Chlora=1  CF_Ntot=1
+		(((( 0 0 0 0 1 )	%  CF_Fucus=0.5  CF_Secchi=0.1  CF_Chlora=0.1  CF_Ntot=0.1
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.5  CF_Secchi=0.1  CF_Chlora=0.1  CF_Ntot=0.3
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.5  CF_Secchi=0.1  CF_Chlora=0.1  CF_Ntot=0.5
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.5  CF_Secchi=0.1  CF_Chlora=0.1  CF_Ntot=0.8
+		   ( 0 0 1 0 0 ))	%  CF_Fucus=0.5  CF_Secchi=0.1  CF_Chlora=0.1  CF_Ntot=1
+		  (( 0 0 0 1 0 )	%  CF_Fucus=0.5  CF_Secchi=0.1  CF_Chlora=0.3  CF_Ntot=0.1
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.5  CF_Secchi=0.1  CF_Chlora=0.3  CF_Ntot=0.3
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.5  CF_Secchi=0.1  CF_Chlora=0.3  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.1  CF_Chlora=0.3  CF_Ntot=0.8
+		   ( 0 0 1 0 0 ))	%  CF_Fucus=0.5  CF_Secchi=0.1  CF_Chlora=0.3  CF_Ntot=1
+		  (( 0 0 0 1 0 )	%  CF_Fucus=0.5  CF_Secchi=0.1  CF_Chlora=0.5  CF_Ntot=0.1
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.5  CF_Secchi=0.1  CF_Chlora=0.5  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.1  CF_Chlora=0.5  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.1  CF_Chlora=0.5  CF_Ntot=0.8
+		   ( 0 0 1 0 0 ))	%  CF_Fucus=0.5  CF_Secchi=0.1  CF_Chlora=0.5  CF_Ntot=1
+		  (( 0 0 0 1 0 )	%  CF_Fucus=0.5  CF_Secchi=0.1  CF_Chlora=0.8  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.1  CF_Chlora=0.8  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.1  CF_Chlora=0.8  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.1  CF_Chlora=0.8  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.5  CF_Secchi=0.1  CF_Chlora=0.8  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.1  CF_Chlora=1  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.1  CF_Chlora=1  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.1  CF_Chlora=1  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.1  CF_Chlora=1  CF_Ntot=0.8
+		   ( 0 1 0 0 0 )))	%  CF_Fucus=0.5  CF_Secchi=0.1  CF_Chlora=1  CF_Ntot=1
+		 ((( 0 0 0 1 0 )	%  CF_Fucus=0.5  CF_Secchi=0.3  CF_Chlora=0.1  CF_Ntot=0.1
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.5  CF_Secchi=0.3  CF_Chlora=0.1  CF_Ntot=0.3
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.5  CF_Secchi=0.3  CF_Chlora=0.1  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.3  CF_Chlora=0.1  CF_Ntot=0.8
+		   ( 0 0 1 0 0 ))	%  CF_Fucus=0.5  CF_Secchi=0.3  CF_Chlora=0.1  CF_Ntot=1
+		  (( 0 0 0 1 0 )	%  CF_Fucus=0.5  CF_Secchi=0.3  CF_Chlora=0.3  CF_Ntot=0.1
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.5  CF_Secchi=0.3  CF_Chlora=0.3  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.3  CF_Chlora=0.3  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.3  CF_Chlora=0.3  CF_Ntot=0.8
+		   ( 0 0 1 0 0 ))	%  CF_Fucus=0.5  CF_Secchi=0.3  CF_Chlora=0.3  CF_Ntot=1
+		  (( 0 0 0 1 0 )	%  CF_Fucus=0.5  CF_Secchi=0.3  CF_Chlora=0.5  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.3  CF_Chlora=0.5  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.3  CF_Chlora=0.5  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.3  CF_Chlora=0.5  CF_Ntot=0.8
+		   ( 0 0 1 0 0 ))	%  CF_Fucus=0.5  CF_Secchi=0.3  CF_Chlora=0.5  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.3  CF_Chlora=0.8  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.3  CF_Chlora=0.8  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.3  CF_Chlora=0.8  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.3  CF_Chlora=0.8  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.5  CF_Secchi=0.3  CF_Chlora=0.8  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.3  CF_Chlora=1  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.3  CF_Chlora=1  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.3  CF_Chlora=1  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.3  CF_Chlora=1  CF_Ntot=0.8
+		   ( 0 1 0 0 0 )))	%  CF_Fucus=0.5  CF_Secchi=0.3  CF_Chlora=1  CF_Ntot=1
+		 ((( 0 0 0 1 0 )	%  CF_Fucus=0.5  CF_Secchi=0.5  CF_Chlora=0.1  CF_Ntot=0.1
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.5  CF_Secchi=0.5  CF_Chlora=0.1  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.5  CF_Chlora=0.1  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.5  CF_Chlora=0.1  CF_Ntot=0.8
+		   ( 0 0 1 0 0 ))	%  CF_Fucus=0.5  CF_Secchi=0.5  CF_Chlora=0.1  CF_Ntot=1
+		  (( 0 0 0 1 0 )	%  CF_Fucus=0.5  CF_Secchi=0.5  CF_Chlora=0.3  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.5  CF_Chlora=0.3  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.5  CF_Chlora=0.3  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.5  CF_Chlora=0.3  CF_Ntot=0.8
+		   ( 0 0 1 0 0 ))	%  CF_Fucus=0.5  CF_Secchi=0.5  CF_Chlora=0.3  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.5  CF_Chlora=0.5  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.5  CF_Chlora=0.5  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.5  CF_Chlora=0.5  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.5  CF_Chlora=0.5  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.5  CF_Secchi=0.5  CF_Chlora=0.5  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.5  CF_Chlora=0.8  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.5  CF_Chlora=0.8  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.5  CF_Chlora=0.8  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.5  CF_Chlora=0.8  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.5  CF_Secchi=0.5  CF_Chlora=0.8  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.5  CF_Chlora=1  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.5  CF_Chlora=1  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.5  CF_Chlora=1  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.5  CF_Chlora=1  CF_Ntot=0.8
+		   ( 0 1 0 0 0 )))	%  CF_Fucus=0.5  CF_Secchi=0.5  CF_Chlora=1  CF_Ntot=1
+		 ((( 0 0 0 1 0 )	%  CF_Fucus=0.5  CF_Secchi=0.8  CF_Chlora=0.1  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.8  CF_Chlora=0.1  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.8  CF_Chlora=0.1  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.8  CF_Chlora=0.1  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.5  CF_Secchi=0.8  CF_Chlora=0.1  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.8  CF_Chlora=0.3  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.8  CF_Chlora=0.3  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.8  CF_Chlora=0.3  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.8  CF_Chlora=0.3  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.5  CF_Secchi=0.8  CF_Chlora=0.3  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.8  CF_Chlora=0.5  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.8  CF_Chlora=0.5  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.8  CF_Chlora=0.5  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.8  CF_Chlora=0.5  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.5  CF_Secchi=0.8  CF_Chlora=0.5  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.8  CF_Chlora=0.8  CF_Ntot=0.1
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.8  CF_Chlora=0.8  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.8  CF_Chlora=0.8  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.8  CF_Chlora=0.8  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.5  CF_Secchi=0.8  CF_Chlora=0.8  CF_Ntot=1
+		  (( 0 1 0 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.8  CF_Chlora=1  CF_Ntot=0.1
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.8  CF_Chlora=1  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.8  CF_Chlora=1  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.5  CF_Secchi=0.8  CF_Chlora=1  CF_Ntot=0.8
+		   ( 1 0 0 0 0 )))	%  CF_Fucus=0.5  CF_Secchi=0.8  CF_Chlora=1  CF_Ntot=1
+		 ((( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=1  CF_Chlora=0.1  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=1  CF_Chlora=0.1  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=1  CF_Chlora=0.1  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.5  CF_Secchi=1  CF_Chlora=0.1  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.5  CF_Secchi=1  CF_Chlora=0.1  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=1  CF_Chlora=0.3  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=1  CF_Chlora=0.3  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=1  CF_Chlora=0.3  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.5  CF_Secchi=1  CF_Chlora=0.3  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.5  CF_Secchi=1  CF_Chlora=0.3  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=1  CF_Chlora=0.5  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.5  CF_Secchi=1  CF_Chlora=0.5  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.5  CF_Secchi=1  CF_Chlora=0.5  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.5  CF_Secchi=1  CF_Chlora=0.5  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.5  CF_Secchi=1  CF_Chlora=0.5  CF_Ntot=1
+		  (( 0 1 0 0 0 )	%  CF_Fucus=0.5  CF_Secchi=1  CF_Chlora=0.8  CF_Ntot=0.1
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.5  CF_Secchi=1  CF_Chlora=0.8  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.5  CF_Secchi=1  CF_Chlora=0.8  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.5  CF_Secchi=1  CF_Chlora=0.8  CF_Ntot=0.8
+		   ( 1 0 0 0 0 ))	%  CF_Fucus=0.5  CF_Secchi=1  CF_Chlora=0.8  CF_Ntot=1
+		  (( 0 1 0 0 0 )	%  CF_Fucus=0.5  CF_Secchi=1  CF_Chlora=1  CF_Ntot=0.1
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.5  CF_Secchi=1  CF_Chlora=1  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.5  CF_Secchi=1  CF_Chlora=1  CF_Ntot=0.5
+		   ( 1 0 0 0 0 )	%  CF_Fucus=0.5  CF_Secchi=1  CF_Chlora=1  CF_Ntot=0.8
+		   ( 1 0 0 0 0 ))))	%  CF_Fucus=0.5  CF_Secchi=1  CF_Chlora=1  CF_Ntot=1
+		(((( 0 0 0 1 0 )	%  CF_Fucus=0.8  CF_Secchi=0.1  CF_Chlora=0.1  CF_Ntot=0.1
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.8  CF_Secchi=0.1  CF_Chlora=0.1  CF_Ntot=0.3
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.8  CF_Secchi=0.1  CF_Chlora=0.1  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.1  CF_Chlora=0.1  CF_Ntot=0.8
+		   ( 0 0 1 0 0 ))	%  CF_Fucus=0.8  CF_Secchi=0.1  CF_Chlora=0.1  CF_Ntot=1
+		  (( 0 0 0 1 0 )	%  CF_Fucus=0.8  CF_Secchi=0.1  CF_Chlora=0.3  CF_Ntot=0.1
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.8  CF_Secchi=0.1  CF_Chlora=0.3  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.1  CF_Chlora=0.3  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.1  CF_Chlora=0.3  CF_Ntot=0.8
+		   ( 0 0 1 0 0 ))	%  CF_Fucus=0.8  CF_Secchi=0.1  CF_Chlora=0.3  CF_Ntot=1
+		  (( 0 0 0 1 0 )	%  CF_Fucus=0.8  CF_Secchi=0.1  CF_Chlora=0.5  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.1  CF_Chlora=0.5  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.1  CF_Chlora=0.5  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.1  CF_Chlora=0.5  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.8  CF_Secchi=0.1  CF_Chlora=0.5  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.1  CF_Chlora=0.8  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.1  CF_Chlora=0.8  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.1  CF_Chlora=0.8  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.1  CF_Chlora=0.8  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.8  CF_Secchi=0.1  CF_Chlora=0.8  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.1  CF_Chlora=1  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.1  CF_Chlora=1  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.1  CF_Chlora=1  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.1  CF_Chlora=1  CF_Ntot=0.8
+		   ( 0 1 0 0 0 )))	%  CF_Fucus=0.8  CF_Secchi=0.1  CF_Chlora=1  CF_Ntot=1
+		 ((( 0 0 0 1 0 )	%  CF_Fucus=0.8  CF_Secchi=0.3  CF_Chlora=0.1  CF_Ntot=0.1
+		   ( 0 0 0 1 0 )	%  CF_Fucus=0.8  CF_Secchi=0.3  CF_Chlora=0.1  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.3  CF_Chlora=0.1  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.3  CF_Chlora=0.1  CF_Ntot=0.8
+		   ( 0 0 1 0 0 ))	%  CF_Fucus=0.8  CF_Secchi=0.3  CF_Chlora=0.1  CF_Ntot=1
+		  (( 0 0 0 1 0 )	%  CF_Fucus=0.8  CF_Secchi=0.3  CF_Chlora=0.3  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.3  CF_Chlora=0.3  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.3  CF_Chlora=0.3  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.3  CF_Chlora=0.3  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.8  CF_Secchi=0.3  CF_Chlora=0.3  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.3  CF_Chlora=0.5  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.3  CF_Chlora=0.5  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.3  CF_Chlora=0.5  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.3  CF_Chlora=0.5  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.8  CF_Secchi=0.3  CF_Chlora=0.5  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.3  CF_Chlora=0.8  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.3  CF_Chlora=0.8  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.3  CF_Chlora=0.8  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.3  CF_Chlora=0.8  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.8  CF_Secchi=0.3  CF_Chlora=0.8  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.3  CF_Chlora=1  CF_Ntot=0.1
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.3  CF_Chlora=1  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.3  CF_Chlora=1  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.3  CF_Chlora=1  CF_Ntot=0.8
+		   ( 0 1 0 0 0 )))	%  CF_Fucus=0.8  CF_Secchi=0.3  CF_Chlora=1  CF_Ntot=1
+		 ((( 0 0 0 1 0 )	%  CF_Fucus=0.8  CF_Secchi=0.5  CF_Chlora=0.1  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.5  CF_Chlora=0.1  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.5  CF_Chlora=0.1  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.5  CF_Chlora=0.1  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.8  CF_Secchi=0.5  CF_Chlora=0.1  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.5  CF_Chlora=0.3  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.5  CF_Chlora=0.3  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.5  CF_Chlora=0.3  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.5  CF_Chlora=0.3  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.8  CF_Secchi=0.5  CF_Chlora=0.3  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.5  CF_Chlora=0.5  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.5  CF_Chlora=0.5  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.5  CF_Chlora=0.5  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.5  CF_Chlora=0.5  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.8  CF_Secchi=0.5  CF_Chlora=0.5  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.5  CF_Chlora=0.8  CF_Ntot=0.1
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.5  CF_Chlora=0.8  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.5  CF_Chlora=0.8  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.5  CF_Chlora=0.8  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.8  CF_Secchi=0.5  CF_Chlora=0.8  CF_Ntot=1
+		  (( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.5  CF_Chlora=1  CF_Ntot=0.1
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.5  CF_Chlora=1  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.5  CF_Chlora=1  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.5  CF_Chlora=1  CF_Ntot=0.8
+		   ( 1 0 0 0 0 )))	%  CF_Fucus=0.8  CF_Secchi=0.5  CF_Chlora=1  CF_Ntot=1
+		 ((( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.8  CF_Chlora=0.1  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.8  CF_Chlora=0.1  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.8  CF_Chlora=0.1  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.8  CF_Chlora=0.1  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.8  CF_Secchi=0.8  CF_Chlora=0.1  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.8  CF_Chlora=0.3  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.8  CF_Chlora=0.3  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.8  CF_Chlora=0.3  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.8  CF_Chlora=0.3  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.8  CF_Secchi=0.8  CF_Chlora=0.3  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.8  CF_Chlora=0.5  CF_Ntot=0.1
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.8  CF_Chlora=0.5  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.8  CF_Chlora=0.5  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.8  CF_Chlora=0.5  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.8  CF_Secchi=0.8  CF_Chlora=0.5  CF_Ntot=1
+		  (( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.8  CF_Chlora=0.8  CF_Ntot=0.1
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.8  CF_Chlora=0.8  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.8  CF_Chlora=0.8  CF_Ntot=0.5
+		   ( 1 0 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.8  CF_Chlora=0.8  CF_Ntot=0.8
+		   ( 1 0 0 0 0 ))	%  CF_Fucus=0.8  CF_Secchi=0.8  CF_Chlora=0.8  CF_Ntot=1
+		  (( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.8  CF_Chlora=1  CF_Ntot=0.1
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.8  CF_Chlora=1  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.8  CF_Chlora=1  CF_Ntot=0.5
+		   ( 1 0 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=0.8  CF_Chlora=1  CF_Ntot=0.8
+		   ( 1 0 0 0 0 )))	%  CF_Fucus=0.8  CF_Secchi=0.8  CF_Chlora=1  CF_Ntot=1
+		 ((( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=1  CF_Chlora=0.1  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=1  CF_Chlora=0.1  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=1  CF_Chlora=0.1  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=1  CF_Chlora=0.1  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.8  CF_Secchi=1  CF_Chlora=0.1  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=0.8  CF_Secchi=1  CF_Chlora=0.3  CF_Ntot=0.1
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=1  CF_Chlora=0.3  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=1  CF_Chlora=0.3  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=1  CF_Chlora=0.3  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=0.8  CF_Secchi=1  CF_Chlora=0.3  CF_Ntot=1
+		  (( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=1  CF_Chlora=0.5  CF_Ntot=0.1
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=1  CF_Chlora=0.5  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=1  CF_Chlora=0.5  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=1  CF_Chlora=0.5  CF_Ntot=0.8
+		   ( 1 0 0 0 0 ))	%  CF_Fucus=0.8  CF_Secchi=1  CF_Chlora=0.5  CF_Ntot=1
+		  (( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=1  CF_Chlora=0.8  CF_Ntot=0.1
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=1  CF_Chlora=0.8  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=1  CF_Chlora=0.8  CF_Ntot=0.5
+		   ( 1 0 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=1  CF_Chlora=0.8  CF_Ntot=0.8
+		   ( 1 0 0 0 0 ))	%  CF_Fucus=0.8  CF_Secchi=1  CF_Chlora=0.8  CF_Ntot=1
+		  (( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=1  CF_Chlora=1  CF_Ntot=0.1
+		   ( 0 1 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=1  CF_Chlora=1  CF_Ntot=0.3
+		   ( 1 0 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=1  CF_Chlora=1  CF_Ntot=0.5
+		   ( 1 0 0 0 0 )	%  CF_Fucus=0.8  CF_Secchi=1  CF_Chlora=1  CF_Ntot=0.8
+		   ( 1 0 0 0 0 ))))	%  CF_Fucus=0.8  CF_Secchi=1  CF_Chlora=1  CF_Ntot=1
+		(((( 0 0 0 1 0 )	%  CF_Fucus=1  CF_Secchi=0.1  CF_Chlora=0.1  CF_Ntot=0.1
+		   ( 0 0 0 1 0 )	%  CF_Fucus=1  CF_Secchi=0.1  CF_Chlora=0.1  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=1  CF_Secchi=0.1  CF_Chlora=0.1  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=1  CF_Secchi=0.1  CF_Chlora=0.1  CF_Ntot=0.8
+		   ( 0 0 1 0 0 ))	%  CF_Fucus=1  CF_Secchi=0.1  CF_Chlora=0.1  CF_Ntot=1
+		  (( 0 0 0 1 0 )	%  CF_Fucus=1  CF_Secchi=0.1  CF_Chlora=0.3  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=1  CF_Secchi=0.1  CF_Chlora=0.3  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=1  CF_Secchi=0.1  CF_Chlora=0.3  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=1  CF_Secchi=0.1  CF_Chlora=0.3  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=1  CF_Secchi=0.1  CF_Chlora=0.3  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=1  CF_Secchi=0.1  CF_Chlora=0.5  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=1  CF_Secchi=0.1  CF_Chlora=0.5  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=1  CF_Secchi=0.1  CF_Chlora=0.5  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.1  CF_Chlora=0.5  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=1  CF_Secchi=0.1  CF_Chlora=0.5  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=1  CF_Secchi=0.1  CF_Chlora=0.8  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=1  CF_Secchi=0.1  CF_Chlora=0.8  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.1  CF_Chlora=0.8  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.1  CF_Chlora=0.8  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=1  CF_Secchi=0.1  CF_Chlora=0.8  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=1  CF_Secchi=0.1  CF_Chlora=1  CF_Ntot=0.1
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.1  CF_Chlora=1  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.1  CF_Chlora=1  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.1  CF_Chlora=1  CF_Ntot=0.8
+		   ( 0 1 0 0 0 )))	%  CF_Fucus=1  CF_Secchi=0.1  CF_Chlora=1  CF_Ntot=1
+		 ((( 0 0 0 1 0 )	%  CF_Fucus=1  CF_Secchi=0.3  CF_Chlora=0.1  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=1  CF_Secchi=0.3  CF_Chlora=0.1  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=1  CF_Secchi=0.3  CF_Chlora=0.1  CF_Ntot=0.5
+		   ( 0 0 1 0 0 )	%  CF_Fucus=1  CF_Secchi=0.3  CF_Chlora=0.1  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=1  CF_Secchi=0.3  CF_Chlora=0.1  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=1  CF_Secchi=0.3  CF_Chlora=0.3  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=1  CF_Secchi=0.3  CF_Chlora=0.3  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=1  CF_Secchi=0.3  CF_Chlora=0.3  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.3  CF_Chlora=0.3  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=1  CF_Secchi=0.3  CF_Chlora=0.3  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=1  CF_Secchi=0.3  CF_Chlora=0.5  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=1  CF_Secchi=0.3  CF_Chlora=0.5  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=1  CF_Secchi=0.3  CF_Chlora=0.5  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.3  CF_Chlora=0.5  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=1  CF_Secchi=0.3  CF_Chlora=0.5  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=1  CF_Secchi=0.3  CF_Chlora=0.8  CF_Ntot=0.1
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.3  CF_Chlora=0.8  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.3  CF_Chlora=0.8  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.3  CF_Chlora=0.8  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=1  CF_Secchi=0.3  CF_Chlora=0.8  CF_Ntot=1
+		  (( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.3  CF_Chlora=1  CF_Ntot=0.1
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.3  CF_Chlora=1  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.3  CF_Chlora=1  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.3  CF_Chlora=1  CF_Ntot=0.8
+		   ( 1 0 0 0 0 )))	%  CF_Fucus=1  CF_Secchi=0.3  CF_Chlora=1  CF_Ntot=1
+		 ((( 0 0 1 0 0 )	%  CF_Fucus=1  CF_Secchi=0.5  CF_Chlora=0.1  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=1  CF_Secchi=0.5  CF_Chlora=0.1  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=1  CF_Secchi=0.5  CF_Chlora=0.1  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.5  CF_Chlora=0.1  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=1  CF_Secchi=0.5  CF_Chlora=0.1  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=1  CF_Secchi=0.5  CF_Chlora=0.3  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=1  CF_Secchi=0.5  CF_Chlora=0.3  CF_Ntot=0.3
+		   ( 0 0 1 0 0 )	%  CF_Fucus=1  CF_Secchi=0.5  CF_Chlora=0.3  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.5  CF_Chlora=0.3  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=1  CF_Secchi=0.5  CF_Chlora=0.3  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=1  CF_Secchi=0.5  CF_Chlora=0.5  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=1  CF_Secchi=0.5  CF_Chlora=0.5  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.5  CF_Chlora=0.5  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.5  CF_Chlora=0.5  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=1  CF_Secchi=0.5  CF_Chlora=0.5  CF_Ntot=1
+		  (( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.5  CF_Chlora=0.8  CF_Ntot=0.1
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.5  CF_Chlora=0.8  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.5  CF_Chlora=0.8  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.5  CF_Chlora=0.8  CF_Ntot=0.8
+		   ( 1 0 0 0 0 ))	%  CF_Fucus=1  CF_Secchi=0.5  CF_Chlora=0.8  CF_Ntot=1
+		  (( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.5  CF_Chlora=1  CF_Ntot=0.1
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.5  CF_Chlora=1  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.5  CF_Chlora=1  CF_Ntot=0.5
+		   ( 1 0 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.5  CF_Chlora=1  CF_Ntot=0.8
+		   ( 1 0 0 0 0 )))	%  CF_Fucus=1  CF_Secchi=0.5  CF_Chlora=1  CF_Ntot=1
+		 ((( 0 0 1 0 0 )	%  CF_Fucus=1  CF_Secchi=0.8  CF_Chlora=0.1  CF_Ntot=0.1
+		   ( 0 0 1 0 0 )	%  CF_Fucus=1  CF_Secchi=0.8  CF_Chlora=0.1  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.8  CF_Chlora=0.1  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.8  CF_Chlora=0.1  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=1  CF_Secchi=0.8  CF_Chlora=0.1  CF_Ntot=1
+		  (( 0 0 1 0 0 )	%  CF_Fucus=1  CF_Secchi=0.8  CF_Chlora=0.3  CF_Ntot=0.1
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.8  CF_Chlora=0.3  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.8  CF_Chlora=0.3  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.8  CF_Chlora=0.3  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=1  CF_Secchi=0.8  CF_Chlora=0.3  CF_Ntot=1
+		  (( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.8  CF_Chlora=0.5  CF_Ntot=0.1
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.8  CF_Chlora=0.5  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.8  CF_Chlora=0.5  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.8  CF_Chlora=0.5  CF_Ntot=0.8
+		   ( 1 0 0 0 0 ))	%  CF_Fucus=1  CF_Secchi=0.8  CF_Chlora=0.5  CF_Ntot=1
+		  (( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.8  CF_Chlora=0.8  CF_Ntot=0.1
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.8  CF_Chlora=0.8  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.8  CF_Chlora=0.8  CF_Ntot=0.5
+		   ( 1 0 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.8  CF_Chlora=0.8  CF_Ntot=0.8
+		   ( 1 0 0 0 0 ))	%  CF_Fucus=1  CF_Secchi=0.8  CF_Chlora=0.8  CF_Ntot=1
+		  (( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.8  CF_Chlora=1  CF_Ntot=0.1
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.8  CF_Chlora=1  CF_Ntot=0.3
+		   ( 1 0 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.8  CF_Chlora=1  CF_Ntot=0.5
+		   ( 1 0 0 0 0 )	%  CF_Fucus=1  CF_Secchi=0.8  CF_Chlora=1  CF_Ntot=0.8
+		   ( 1 0 0 0 0 )))	%  CF_Fucus=1  CF_Secchi=0.8  CF_Chlora=1  CF_Ntot=1
+		 ((( 0 0 1 0 0 )	%  CF_Fucus=1  CF_Secchi=1  CF_Chlora=0.1  CF_Ntot=0.1
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=1  CF_Chlora=0.1  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=1  CF_Chlora=0.1  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=1  CF_Chlora=0.1  CF_Ntot=0.8
+		   ( 0 1 0 0 0 ))	%  CF_Fucus=1  CF_Secchi=1  CF_Chlora=0.1  CF_Ntot=1
+		  (( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=1  CF_Chlora=0.3  CF_Ntot=0.1
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=1  CF_Chlora=0.3  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=1  CF_Chlora=0.3  CF_Ntot=0.5
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=1  CF_Chlora=0.3  CF_Ntot=0.8
+		   ( 1 0 0 0 0 ))	%  CF_Fucus=1  CF_Secchi=1  CF_Chlora=0.3  CF_Ntot=1
+		  (( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=1  CF_Chlora=0.5  CF_Ntot=0.1
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=1  CF_Chlora=0.5  CF_Ntot=0.3
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=1  CF_Chlora=0.5  CF_Ntot=0.5
+		   ( 1 0 0 0 0 )	%  CF_Fucus=1  CF_Secchi=1  CF_Chlora=0.5  CF_Ntot=0.8
+		   ( 1 0 0 0 0 ))	%  CF_Fucus=1  CF_Secchi=1  CF_Chlora=0.5  CF_Ntot=1
+		  (( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=1  CF_Chlora=0.8  CF_Ntot=0.1
+		   ( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=1  CF_Chlora=0.8  CF_Ntot=0.3
+		   ( 1 0 0 0 0 )	%  CF_Fucus=1  CF_Secchi=1  CF_Chlora=0.8  CF_Ntot=0.5
+		   ( 1 0 0 0 0 )	%  CF_Fucus=1  CF_Secchi=1  CF_Chlora=0.8  CF_Ntot=0.8
+		   ( 1 0 0 0 0 ))	%  CF_Fucus=1  CF_Secchi=1  CF_Chlora=0.8  CF_Ntot=1
+		  (( 0 1 0 0 0 )	%  CF_Fucus=1  CF_Secchi=1  CF_Chlora=1  CF_Ntot=0.1
+		   ( 1 0 0 0 0 )	%  CF_Fucus=1  CF_Secchi=1  CF_Chlora=1  CF_Ntot=0.3
+		   ( 1 0 0 0 0 )	%  CF_Fucus=1  CF_Secchi=1  CF_Chlora=1  CF_Ntot=0.5
+		   ( 1 0 0 0 0 )	%  CF_Fucus=1  CF_Secchi=1  CF_Chlora=1  CF_Ntot=0.8
+		   ( 1 0 0 0 0 )))));	%  CF_Fucus=1  CF_Secchi=1  CF_Chlora=1  CF_Ntot=1
+    }
+
+    potential (CF_Fucus | Fucus_wfd_class_1)
+    {
+	data = (( 0 0 0 0 1 )	%  Fucus_wfd_class_1=High
+		( 0 0 0 1 0 )	%  Fucus_wfd_class_1=Good
+		( 0 0 1 0 0 )	%  Fucus_wfd_class_1=Moderate
+		( 0 1 0 0 0 )	%  Fucus_wfd_class_1=Poor
+		( 1 0 0 0 0 ));	%  Fucus_wfd_class_1=Bad
+    }
+
+    potential (CF_Secchi | Secchi_wfd_class_1)
+    {
+	data = (( 0 0 0 0 1 )	%  Secchi_wfd_class_1=High
+		( 0 0 0 1 0 )	%  Secchi_wfd_class_1=Good
+		( 0 0 1 0 0 )	%  Secchi_wfd_class_1=Moderate
+		( 0 1 0 0 0 )	%  Secchi_wfd_class_1=Poor
+		( 1 0 0 0 0 ));	%  Secchi_wfd_class_1=Bad
+    }
+
+    potential (CF_Chlora | Chlora_wfd_class_1)
+    {
+	data = (( 0 0 0 0 1 )	%  Chlora_wfd_class_1=High
+		( 0 0 0 1 0 )	%  Chlora_wfd_class_1=Good
+		( 0 0 1 0 0 )	%  Chlora_wfd_class_1=Moderate
+		( 0 1 0 0 0 )	%  Chlora_wfd_class_1=Poor
+		( 1 0 0 0 0 ));	%  Chlora_wfd_class_1=Bad
+    }
+
+    potential (CF_Ntot | Ntot_wfd_class_1)
+    {
+	data = (( 0 0 0 0 1 )	%  Ntot_wfd_class_1=High
+		( 0 0 0 1 0 )	%  Ntot_wfd_class_1=Good
+		( 0 0 1 0 0 )	%  Ntot_wfd_class_1=Moderate
+		( 0 1 0 0 0 )	%  Ntot_wfd_class_1=Poor
+		( 1 0 0 0 0 ));	%  Ntot_wfd_class_1=Bad
+    }
+
+    potential (Secchi_wfd_class_1 | Secchi_1)
+    {
+	data = (( 0 0 0 0 1 )	%  Secchi_1=interval(0,0.5)
+		( 0 0 0 1 0 )	%  Secchi_1=interval(0.5,1.1)
+		( 0 0 1 0 0 )	%  Secchi_1=interval(1.1,3)
+		( 0 1 0 0 0 )	%  Secchi_1=interval(3,4.5)
+		( 1 0 0 0 0 ));	%  Secchi_1=interval(4.5,infinity)
+    }
+
+    potential (Chlora_wfd_class_1 | Chlorophyll_a_1)
+    {
+	data = (( 1 0 0 0 0 )	%  Chlorophyll_a_1=interval(0,3.2)
+		( 0 1 0 0 0 )	%  Chlorophyll_a_1=interval(3.2,4.7)
+		( 0 0 1 0 0 )	%  Chlorophyll_a_1=interval(4.7,13)
+		( 0 0 0 1 0 )	%  Chlorophyll_a_1=interval(13,26)
+		( 0 0 0 0 1 ));	%  Chlorophyll_a_1=interval(26,infinity)
+    }
+
+    potential (Ntot_wfd_class_1 | Ntot_1)
+    {
+	data = (( 1 0 0 0 0 )	%  Ntot_1=interval(0,468)
+		( 0 1 0 0 0 )	%  Ntot_1=interval(468,585)
+		( 0 0 1 0 0 )	%  Ntot_1=interval(585,1170)
+		( 0 0 0 1 0 )	%  Ntot_1=interval(1170,1560)
+		( 0 0 0 0 1 ));	%  Ntot_1=interval(1560,infinity)
+    }
+
+    potential (Temperature_surface_1)
+    {
+	data = ( 0.000884956 0.040708 0.469912 0.452212 0.0362832 );
+	experience = 226;
+    }
+
+    potential (Temperature_bottom_1)
+    {
+	data = ( 0.0559633 0.326606 0.358716 0.188991 0.0697248 );
+	experience = 226;
+    }
+
+    potential (Salinity_surface_1)
+    {
+	data = ( 0.0671054 0.0427195 0.888099 0.00207621 );
+	experience = 226;
+    }
+} % class Area1_wfd

@@ -1,0 +1,25 @@
+TYPEMAP
+	h_domain_t T_PTROBJ
+	h_class_collection_t T_PTROBJ
+	h_class_t T_PTROBJ
+	Hugin_Node T_PTROBJ_SPECIAL
+	Hugin_Table T_PTROBJ_SPECIAL
+	Hugin_Domain T_PTROBJ_SPECIAL
+	Hugin_Class T_PTROBJ_SPECIAL
+	Hugin_Collection T_PTROBJ_SPECIAL
+	Hugin_Expression T_PTROBJ_SPECIAL
+	Hugin_Model T_PTROBJ_SPECIAL
+
+INPUT
+T_PTROBJ_SPECIAL
+	if (sv_derived_from($arg, \"${(my $ntt=$ntype)=~s/_/::/g;\$ntt}\")) {
+	   IV tmp = SvIV((SV*)SvRV($arg));
+	   $var = INT2PTR($type, tmp);
+	 }
+	 else
+		croak(\"$var is not of type ${(my $ntt=$ntype)=~s/_/::/g;\$ntt}\")
+
+OUTPUT
+T_PTROBJ_SPECIAL
+	sv_setref_pv($arg, \"${(my $ntt=$ntype)=~s/_/::/g;\$ntt}\",
+	(void*)$var);
