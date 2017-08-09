@@ -42,5 +42,5 @@ else {
 }
 
 sub MY::postamble {
-    "doc:\n\tperl apidoc.pl < Hugin.xs >temp.pm; doxygen; rm temp.pm\n";
+    "doc:\n\tperl apidoc.pl <Hugin.xs >temp.pm; doxygen-filter-perl temp.pm >all.dox; doxygen; rm temp.pm all.dox\n";
 }

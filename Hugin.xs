@@ -162,10 +162,11 @@ INCLUDE: const-xs.inc
 MODULE = Hugin        PACKAGE = Hugin::Collection          PREFIX = collection_
 
 =pod
-
 @class Hugin::Collection
 @brief A collection of Hugin classes.
+=cut
 
+=pod
 @cmethod Hugin::Collection new()
 @return A new collection object.
 =cut
@@ -185,7 +186,6 @@ void collection_DESTROY(Hugin_Collection collection)
            croak("Error in collection_delete: %s\n", h_error_description(e));
 
 =pod
-
 @method Hugin::Class new_class()
 @brief Create a new class into the collection.
 =cut
@@ -199,7 +199,6 @@ SV *collection_new_class(Hugin_Collection collection)
         RETVAL
 
 =pod
-
 @method parse($directory, $name)
 @brief Parse NET files containing classes.
 =cut
@@ -208,7 +207,6 @@ void collection_parse(Hugin_Collection collection, char *directory, char *name)
         parse_classes(name, collection, directory);
 
 =pod
-
 @method save_as_net($filename)
 @brief Save the collection into a NET file.
 =cut
@@ -220,7 +218,6 @@ void collection_save_as_net(Hugin_Collection collection, char *filename)
 
 
 =pod
-
 @method @get_classes()
 @return The classes in this collection in a list.
 =cut
@@ -234,7 +231,6 @@ void collection_get_classes(Hugin_Collection collection)
         }
 
 =pod
-
 @method Hugin::Class get_class_by_name($name)
 @return A class or undef
 =cut
@@ -252,10 +248,11 @@ SV *collection_get_class_by_name(Hugin_Collection collection, char *name)
 MODULE = Hugin        PACKAGE = Hugin::Class          PREFIX = class_
 
 =pod
-
 @class Hugin::Class
 @brief An object-oriented Hugin model is a class.
+=cut
 
+=pod
 @method Hugin::Collection get_collection()
 @return The collection to which this class belongs to.
 =cut
@@ -269,7 +266,6 @@ SV *class_get_collection(Hugin_Class c)
         RETVAL
 
 =pod
-
 @method delete()
 @brief Remove this class from the collection.
 =cut
@@ -280,7 +276,6 @@ void class_delete(Hugin_Class c)
            croak("Error in class_delete: %s\n", h_error_description(e));
 
 =pod
-
 @method $get_name()
 =cut
 SV* class_get_name(Hugin_Class c)
@@ -293,7 +288,6 @@ SV* class_get_name(Hugin_Class c)
         RETVAL
 
 =pod
-
 @method set_name($name)
 =cut
 void class_set_name(Hugin_Class c, char *name)
@@ -302,7 +296,6 @@ void class_set_name(Hugin_Class c, char *name)
             h_class_set_name(c, name);
 
 =pod
-
 @method Hugin::Node new_node($category, $kind)
 Category is "chance", "decision", "utility", or "instance". Kind
 is either "discrete" or "continuous".
@@ -317,7 +310,6 @@ Hugin_Node class_new_node(Hugin_Class klass, char *category, char *kind)
         RETVAL
 
 =pod
-
 @method Hugin::Node get_node_by_name($name)
 =cut
 Hugin_Node class_get_node_by_name(Hugin_Class klass, char *name)
@@ -329,7 +321,6 @@ Hugin_Node class_get_node_by_name(Hugin_Class klass, char *name)
 
 
 =pod
-
 @method Hugin::Domain create_domain()
 =cut
 Hugin_Domain class_create_domain(Hugin_Class c)
@@ -342,7 +333,6 @@ Hugin_Domain class_create_domain(Hugin_Class c)
         RETVAL
 
 =pod
-
 @method @get_node_size()
 =cut
 void class_get_node_size(Hugin_Class c)
@@ -357,7 +347,6 @@ void class_get_node_size(Hugin_Class c)
             croak("Error in class_get_node_size: %s\n", h_error_description(e));
 
 =pod
-
 @method set_node_size()
 =cut
 void class_set_node_size(Hugin_Class c, size_t width, size_t height)
@@ -367,7 +356,6 @@ void class_set_node_size(Hugin_Class c, size_t width, size_t height)
             croak("Error in class_set_node_size: %s\n", h_error_description(e));
 
 =pod
-
 @method %get_attributes()
 =cut
 void class_get_attributes(Hugin_Class c)
@@ -381,7 +369,6 @@ void class_get_attributes(Hugin_Class c)
         }
 
 =pod
-
 @method set_attribute($attribute, $value)
 =cut
 void class_set_attribute(Hugin_Class c, char *attribute, char *value)
@@ -391,7 +378,6 @@ void class_set_attribute(Hugin_Class c, char *attribute, char *value)
             croak("Error in class_set_attribute: %s\n", h_error_description(e));
 
 =pod
-
 @method @get_nodes()
 =cut
 void class_get_nodes(Hugin_Class c)
@@ -402,7 +388,6 @@ void class_get_nodes(Hugin_Class c)
         }
 
 =pod
-
 @method Hugin::Node new_instance()
 =cut
 Hugin_Node class_new_instance(Hugin_Class c1, Hugin_Class c2)
@@ -412,7 +397,6 @@ Hugin_Node class_new_instance(Hugin_Class c1, Hugin_Class c2)
         RETVAL
 
 =pod
-
 @method @get_inputs()
 =cut
 void class_get_inputs(Hugin_Class c)
@@ -425,7 +409,6 @@ void class_get_inputs(Hugin_Class c)
         }
 
 =pod
-
 @method @get_outputs()
 =cut
 void class_get_outputs(Hugin_Class c)
@@ -440,10 +423,11 @@ void class_get_outputs(Hugin_Class c)
 MODULE = Hugin        PACKAGE = Hugin::Domain          PREFIX = domain_
 
 =pod
-
 @class Hugin::Domain
 @brief A runtime domain.
+=cut
 
+=pod
 @cmethod Hugin_Domain new()
 =cut
 Hugin_Domain domain_new(void)
@@ -454,7 +438,6 @@ Hugin_Domain domain_new(void)
         RETVAL
 
 =pod
-
 @cmethod Hugin::Domain parse_net_file($filename)
 =cut
 Hugin_Domain domain_parse_net_file(char *file_name)
@@ -467,7 +450,6 @@ Hugin_Domain domain_parse_net_file(char *file_name)
         RETVAL
 
 =pod
-
 @method Hugin::Domain clone()
 =cut
 Hugin_Domain domain_clone(Hugin_Domain domain)
@@ -486,7 +468,6 @@ void domain_DESTROY(Hugin_Domain domain)
            croak("Error in domain_delete: %s\n", h_error_description(e));
 
 =pod
-
 @method Hugin::Node get_first_node()
 =cut
 Hugin_Node domain_get_first_node(Hugin_Domain domain)
@@ -496,7 +477,6 @@ Hugin_Node domain_get_first_node(Hugin_Domain domain)
         RETVAL
 
 =pod
-
 @method @get_nodes()
 =cut
 void domain_get_nodes(Hugin_Domain domain)
@@ -507,7 +487,6 @@ void domain_get_nodes(Hugin_Domain domain)
         }
 
 =pod
-
 @method Hugin::Node new_node($category, $kind)
 Category is "chance", "decision", "utility", or "instance". Kind
 is either "discrete" or "continuous".
@@ -522,7 +501,6 @@ Hugin_Node domain_new_node(Hugin_Domain domain, char *category, char *kind)
         RETVAL
 
 =pod
-
 @method Hugin::Node get_node_by_name($name)
 =cut
 Hugin_Node domain_get_node_by_name(Hugin_Domain domain, char *name)
@@ -534,7 +512,6 @@ Hugin_Node domain_get_node_by_name(Hugin_Domain domain, char *name)
         RETVAL
 
 =pod
-
 @method @get_node_size()
 =cut
 void domain_get_node_size(Hugin_Domain d)
@@ -549,7 +526,6 @@ void domain_get_node_size(Hugin_Domain d)
             croak("Error in domain_get_node_size: %s\n", h_error_description(e));
 
 =pod
-
 @method %get_attributes()
 =cut
 void domain_get_attributes(Hugin_Domain d)
@@ -563,7 +539,6 @@ void domain_get_attributes(Hugin_Domain d)
         }
 
 =pod
-
 @method compile()
 =cut
 void domain_compile(Hugin_Domain domain)
@@ -581,7 +556,6 @@ int domain_is_compiled(Hugin_Domain domain)
     
 
 =pod
-
 @method retract_findings()
 =cut
 void domain_retract_findings(Hugin_Domain domain)
@@ -591,7 +565,6 @@ void domain_retract_findings(Hugin_Domain domain)
             croak("Error in domain_retract_findings: %s\n", h_error_description(e));
 
 =pod
-
 @method propagate($equilibrium, $evidence_mode)
 Equilibrium is either "sum" or "max". Evidence_mode is either "normal"
 or "fast_rectraction".
@@ -603,7 +576,6 @@ void domain_propagate(Hugin_Domain domain, char *equilibrium, char *evidence_mod
             croak("Error in domain_propagate: %s\n", h_error_description(e));
 
 =pod
-
 @method $get_expected_utility()
 =cut
 double domain_get_expected_utility(Hugin_Domain domain)
@@ -618,10 +590,11 @@ double domain_get_expected_utility(Hugin_Domain domain)
 MODULE = Hugin        PACKAGE = Hugin::Node          PREFIX = node_
 
 =pod
-
 @class Hugin::Node
 @brief A node in a class or a domain.
+=cut
 
+=pod
 @method Hugin::Domain get_domain()
 =cut
 Hugin_Domain node_get_domain(Hugin_Node node)
@@ -632,7 +605,6 @@ Hugin_Domain node_get_domain(Hugin_Node node)
         RETVAL
 
 =pod
-
 @method Hugin::Class get_class()
 =cut
 Hugin_Class node_get_class(Hugin_Node node)
@@ -643,7 +615,6 @@ Hugin_Class node_get_class(Hugin_Node node)
         RETVAL
 
 =pod
-
 @method Hugin::Class get_instance_class()
 =cut
 Hugin_Class node_get_instance_class(Hugin_Node node)
@@ -654,7 +625,6 @@ Hugin_Class node_get_instance_class(Hugin_Node node)
         RETVAL
 
 =pod
-
 @method Hugin::Node get_instance()
 =cut
 Hugin_Node node_get_instance(Hugin_Node node)
@@ -665,7 +635,6 @@ Hugin_Node node_get_instance(Hugin_Node node)
         RETVAL
 
 =pod
-
 @method add_to_outputs(Hugin::Node node)
 =cut
 void node_add_to_outputs(Hugin_Node node)
@@ -675,7 +644,6 @@ void node_add_to_outputs(Hugin_Node node)
             croak("Error in add_to_outputs: %s\n", h_error_description(e));
 
 =pod
-
 @method Hugin::Node get_output(Hugin::Node output)
 Return the output clone of the argument. The self has to be an
 instance node and the argument a node within the actual class. The
@@ -689,7 +657,6 @@ Hugin_Node node_get_output(Hugin_Node instance, Hugin_Node output)
         RETVAL
 
 =pod
-
 @method add_to_inputs(Hugin::Node node)
 =cut
 void node_add_to_inputs(Hugin_Node node)
@@ -699,7 +666,6 @@ void node_add_to_inputs(Hugin_Node node)
             croak("Error in add_to_inputs: %s\n", h_error_description(e));
 
 =pod
-
 @method set_input(Hugin::Node input, Hugin::Node actual)
 =cut
 void node_set_input(Hugin_Node instance, Hugin_Node input, Hugin_Node actual)
@@ -709,7 +675,6 @@ void node_set_input(Hugin_Node instance, Hugin_Node input, Hugin_Node actual)
             croak("Error in set_input: %s\n", h_error_description(e));
 
 =pod
-
 @method Hugin::Node get_input(Hugin::Node input)
 Return the actual input node bound to the argument node. The self has
 to be an instance node and the argument a node within the actual
@@ -723,7 +688,6 @@ Hugin_Node node_get_input(Hugin_Node instance, Hugin_Node input)
         RETVAL
 
 =pod
-
 @method $get_category()
 =cut
 SV *node_get_category(Hugin_Node node)
@@ -733,7 +697,6 @@ SV *node_get_category(Hugin_Node node)
         RETVAL
 
 =pod
-
 @method $get_kind()
 =cut
 SV *node_get_kind(Hugin_Node node)
@@ -743,7 +706,6 @@ SV *node_get_kind(Hugin_Node node)
         RETVAL
 
 =pod
-
 @method $get_subtype()
 Subtype is either "label", "boolean", "number" or "interval".
 =cut
@@ -770,7 +732,6 @@ SV *node_get_subtype(Hugin_Node node)
         RETVAL
 
 =pod
-
 @method set_subtype($subtype)
 Subtype is either "label", "boolean", "number" or "interval".
 =cut
@@ -792,7 +753,6 @@ void node_set_subtype(Hugin_Node node, char *subtype)
             croak("Error in node_set_subtype: %s\n", h_error_description(e));
 
 =pod
-
 @method add_parent(Hugin::Node parent)
 =cut
 void node_add_parent(Hugin_Node child, Hugin_Node parent)
@@ -802,7 +762,6 @@ void node_add_parent(Hugin_Node child, Hugin_Node parent)
             croak("Error in node_add_parent: %s\n", h_error_description(e));
 
 =pod
-
 @method remove_parent(Hugin::Node parent)
 =cut
 void node_remove_parent(Hugin_Node node, Hugin_Node parent)
@@ -812,7 +771,6 @@ void node_remove_parent(Hugin_Node node, Hugin_Node parent)
             croak("Error in node_remove_parent: %s\n", h_error_description(e));
 
 =pod
-
 @method switch_parent(Hugin::Node old_parent, Hugin::Node new_parent)
 =cut
 void node_switch_parent(Hugin_Node node, Hugin_Node old_parent, Hugin_Node new_parent)
@@ -822,7 +780,6 @@ void node_switch_parent(Hugin_Node node, Hugin_Node old_parent, Hugin_Node new_p
             croak("Error in node_switch_parent: %s\n", h_error_description(e));
 
 =pod
-
 @method reverse_edge(Hugin::Node node)
 =cut
 void node_reverse_edge(Hugin_Node node1, Hugin_Node node2)
@@ -832,7 +789,6 @@ void node_reverse_edge(Hugin_Node node1, Hugin_Node node2)
             croak("Error in node_reverse_edge: %s\n", h_error_description(e));
 
 =pod
-
 @method @get_parents()
 =cut
 void node_get_parents(Hugin_Node node)
@@ -845,7 +801,6 @@ void node_get_parents(Hugin_Node node)
            }
 
 =pod
-
 @method @get_children()
 =cut
 void node_get_children(Hugin_Node node)
@@ -858,7 +813,6 @@ void node_get_children(Hugin_Node node)
            }
 
 =pod
-
 @method $get_label()
 =cut
 SV *node_get_label(Hugin_Node node)
@@ -868,7 +822,6 @@ SV *node_get_label(Hugin_Node node)
         RETVAL
 
 =pod
-
 @method set_label($label)
 =cut
 void node_set_label(Hugin_Node node, char *label)
@@ -878,7 +831,6 @@ void node_set_label(Hugin_Node node, char *label)
             croak("Error in node_set_label: %s\n", h_error_description(e));
 
 =pod
-
 @method @get_position()
 =cut
 void node_get_position(Hugin_Node node)
@@ -892,7 +844,6 @@ void node_get_position(Hugin_Node node)
         PUSHs(sv_2mortal(newSVnv(y)));
 
 =pod
-
 @method set_position($x, $y)
 =cut
 void node_set_position(Hugin_Node node, int x, int y)
@@ -902,7 +853,6 @@ void node_set_position(Hugin_Node node, int x, int y)
             croak("Error in node_set_position: %s\n", h_error_description(e));
 
 =pod
-
 @method %get_attributes()
 =cut
 void node_get_attributes(Hugin_Node node)
@@ -916,7 +866,6 @@ void node_get_attributes(Hugin_Node node)
         }
 
 =pod
-
 @method set_attribute($attribute, $value)
 =cut
 void node_set_attribute(Hugin_Node c, char *attribute, char *value)
@@ -926,7 +875,6 @@ void node_set_attribute(Hugin_Node c, char *attribute, char *value)
             croak("Error in node_set_attribute: %s\n", h_error_description(e));
 
 =pod
-
 @method delete()
 @brief Remove this node from the class (collection) or domain.
 =cut
@@ -937,7 +885,6 @@ void node_delete(Hugin_Node node)
             croak("Error in node_delete: %s\n", h_error_description(e));
 
 =pod
-
 @method Hugin::Node get_next()
 =cut
 Hugin_Node node_get_next(Hugin_Node node)
@@ -947,7 +894,6 @@ Hugin_Node node_get_next(Hugin_Node node)
         RETVAL
 
 =pod
-
 @method $get_name()
 =cut
 SV *node_get_name(Hugin_Node node)
@@ -960,7 +906,6 @@ SV *node_get_name(Hugin_Node node)
         RETVAL
 
 =pod
-
 @method set_name($name)
 =cut
 void node_set_name(Hugin_Node node, char *name)
@@ -970,7 +915,6 @@ void node_set_name(Hugin_Node node, char *name)
             croak("Error in node_set_name: %s\n", h_error_description(e));
 
 =pod
-
 @method $get_number_of_states()
 =cut
 int node_get_number_of_states(Hugin_Node node)
@@ -983,7 +927,6 @@ int node_get_number_of_states(Hugin_Node node)
         RETVAL
 
 =pod
-
 @method set_number_of_states($n)
 =cut
 void node_set_number_of_states(Hugin_Node node, int n)
@@ -993,7 +936,6 @@ void node_set_number_of_states(Hugin_Node node, int n)
             croak("Error in node_set_number_of_states: %s\n", h_error_description(e));
 
 =pod
-
 @method @get_state_labels()
 =cut
 void node_get_state_labels(Hugin_Node node)
@@ -1004,7 +946,6 @@ void node_get_state_labels(Hugin_Node node)
         }
 
 =pod
-
 @method set_state_labels(@labels)
 =cut
 void node_set_state_labels(Hugin_Node node, ...)
@@ -1018,7 +959,6 @@ void node_set_state_labels(Hugin_Node node, ...)
         }
 
 =pod
-
 @method @get_state_values()
 =cut
 void node_get_state_values(Hugin_Node node)
@@ -1039,7 +979,6 @@ void node_get_state_values(Hugin_Node node)
         }
 
 =pod
-
 @method set_state_values(@values)
 =cut
 void node_set_state_values(Hugin_Node node, ...)
@@ -1053,7 +992,6 @@ void node_set_state_values(Hugin_Node node, ...)
         }
 
 =pod
-
 @method $get_state_value($value, $state)
 =cut
 double node_get_state_value(Hugin_Node node, int state, double value)
@@ -1063,7 +1001,6 @@ double node_get_state_value(Hugin_Node node, int state, double value)
         RETVAL
 
 =pod
-
 @method set_state_value($value, $state, $value)
 =cut
 void node_set_state_value(Hugin_Node node, int state, double value)
@@ -1073,7 +1010,6 @@ void node_set_state_value(Hugin_Node node, int state, double value)
             croak("Error in node_set_state_value: %s\n", h_error_description(e));
 
 =pod
-
 @method Hugin::Table get_table()
 =cut
 Hugin_Table node_get_table(Hugin_Node node)
@@ -1084,7 +1020,6 @@ Hugin_Table node_get_table(Hugin_Node node)
         RETVAL
 
 =pod
-
 @method $get_belief($state)
 =cut
 double node_get_belief(Hugin_Node node, int state)
@@ -1094,7 +1029,6 @@ double node_get_belief(Hugin_Node node, int state)
         RETVAL
 
 =pod
-
 @method @get_beliefs()
 =cut
 void node_get_beliefs(Hugin_Node node)
@@ -1105,7 +1039,6 @@ void node_get_beliefs(Hugin_Node node)
         }
 
 =pod
-
 @method select_state($state)
 =cut
 void node_select_state(Hugin_Node node, int state)
@@ -1115,7 +1048,6 @@ void node_select_state(Hugin_Node node, int state)
             croak("Error in node_select_state: %s\n", h_error_description(e));
 
 =pod
-
 @method enter_finding($state, $value)
 =cut
 void node_enter_finding(Hugin_Node node, int state, double value)
@@ -1125,7 +1057,6 @@ void node_enter_finding(Hugin_Node node, int state, double value)
             croak("Error in node_enter_finding: %s\n", h_error_description(e));
 
 =pod
-
 @method $get_entered_finding($state)
 =cut
 double node_get_entered_finding(Hugin_Node node, int state)
@@ -1139,7 +1070,6 @@ double node_get_entered_finding(Hugin_Node node, int state)
         RETVAL
 
 =pod
-
 @method $get_entered_value()
 =cut
 double node_get_entered_value(Hugin_Node node)
@@ -1152,7 +1082,6 @@ double node_get_entered_value(Hugin_Node node)
         RETVAL
 
 =pod
-
 @method $evidence_is_entered()
 =cut
 int node_evidence_is_entered(Hugin_Node node)
@@ -1162,7 +1091,6 @@ int node_evidence_is_entered(Hugin_Node node)
         RETVAL
 
 =pod
-
 @method $likelihood_is_entered()
 =cut
 int node_likelihood_is_entered(Hugin_Node node)
@@ -1172,7 +1100,6 @@ int node_likelihood_is_entered(Hugin_Node node)
         RETVAL
 
 =pod
-
 @method enter_findings(@values)
 =cut
 void node_enter_findings(Hugin_Node node, ...)
@@ -1186,7 +1113,6 @@ void node_enter_findings(Hugin_Node node, ...)
         }
 
 =pod
-
 @method @get_entered_findings()
 =cut
 void node_get_entered_findings(Hugin_Node node)
@@ -1203,7 +1129,6 @@ void node_get_entered_findings(Hugin_Node node)
         }
 
 =pod
-
 @method enter_value($value)
 =cut
 void node_enter_value(Hugin_Node node, double value)
@@ -1213,7 +1138,6 @@ void node_enter_value(Hugin_Node node, double value)
             croak("Error in node_enter_value: %s\n", h_error_description(e));
 
 =pod
-
 @method retract_findings()
 =cut
 void node_retract_findings(Hugin_Node node)
@@ -1223,7 +1147,6 @@ void node_retract_findings(Hugin_Node node)
             croak("Error in node_retract_findings: %s\n", h_error_description(e));
 
 =pod
-
 @method $get_expected_utility($state = 0)
 =cut
 double node_get_expected_utility(Hugin_Node node, int state = 0)
@@ -1236,7 +1159,6 @@ double node_get_expected_utility(Hugin_Node node, int state = 0)
         RETVAL
 
 =pod
-
 @method Hugin::Expression make_expression()
 =cut
 Hugin_Expression node_make_expression(Hugin_Node node)
@@ -1246,7 +1168,6 @@ Hugin_Expression node_make_expression(Hugin_Node node)
         RETVAL
 
 =pod
-
 @method Hugin::Model new_model()
 =cut
 Hugin_Model node_new_model(Hugin_Node node, ...)
@@ -1265,7 +1186,6 @@ Hugin_Model node_new_model(Hugin_Node node, ...)
         RETVAL
 
 =pod
-
 @method Hugin::Model get_model()
 =cut
 Hugin_Model node_get_model(Hugin_Node node)
@@ -1277,7 +1197,6 @@ Hugin_Model node_get_model(Hugin_Node node)
 MODULE = Hugin        PACKAGE = Hugin::Expression      PREFIX = expression_
 
 =pod
-
 @class Hugin::Expression
 @brief An expression in a Hugin::Model.
 =cut
@@ -1290,7 +1209,6 @@ void expression_DESTROY(Hugin_Expression ex)
 
 
 =pod
-
 @method $to_string()
 =cut
 const char *expression_to_string(Hugin_Expression e)
@@ -1302,10 +1220,11 @@ const char *expression_to_string(Hugin_Expression e)
 MODULE = Hugin        PACKAGE = Hugin::Model      PREFIX = model_
 
 =pod
-
 @class Hugin::Model
 @brief A method to compute a conditional probability table.
+=cut
 
+=pod
 @method delete()
 @brief Remove the model from the node.
 =cut
@@ -1317,7 +1236,6 @@ void model_delete(Hugin_Model m)
                croak("Error in model_delete: %s\n", h_error_description(e));
 
 =pod
-
 @method Hugin::Expression expression_from_string($string)
 =cut
 Hugin_Expression model_expression_from_string(Hugin_Model m, char *s)
@@ -1327,7 +1245,6 @@ Hugin_Expression model_expression_from_string(Hugin_Model m, char *s)
         RETVAL
 
 =pod
-
 @method get_size()
 =cut
 size_t model_get_size(Hugin_Model m)
@@ -1337,7 +1254,6 @@ size_t model_get_size(Hugin_Model m)
         RETVAL
 
 =pod
-
 @method @get_nodes()
 =cut
 void model_get_nodes(Hugin_Model m)
@@ -1350,7 +1266,6 @@ void model_get_nodes(Hugin_Model m)
            }
 
 =pod
-
 @method Hugin::Expression get_expression($from_index)
 =cut
 Hugin_Expression model_get_expression(Hugin_Model m, size_t index)
@@ -1360,7 +1275,6 @@ Hugin_Expression model_get_expression(Hugin_Model m, size_t index)
         RETVAL
 
 =pod
-
 @method set_expression($to_index, Hugin::Expression e)
 =cut
 void model_set_expression(Hugin_Model m, size_t index, Hugin_Expression e)
@@ -1373,10 +1287,11 @@ void model_set_expression(Hugin_Model m, size_t index, Hugin_Expression e)
 MODULE = Hugin        PACKAGE = Hugin::Table          PREFIX = table_
 
 =pod
-
 @class Hugin::Table
 @brief A conditional probability table.
+=cut
 
+=pod
 @method @get_data()
 =cut
 void table_get_data(Hugin_Table table)
@@ -1397,7 +1312,6 @@ void table_get_data(Hugin_Table table)
         }
 
 =pod
-
 @method set_data(@data)
 =cut
 void table_set_data(Hugin_Table table, ...)
@@ -1418,7 +1332,6 @@ void table_set_data(Hugin_Table table, ...)
         }
 
 =pod
-
 @method $get_index_from_configuration()
 =cut
 int table_get_index_from_configuration(Hugin_Table table)
@@ -1429,7 +1342,6 @@ int table_get_index_from_configuration(Hugin_Table table)
         RETVAL                   
 
 =pod
-
 @method @get_nodes()
 =cut
 void table_get_nodes(Hugin_Table table)
